@@ -1,0 +1,786 @@
+\documentclass[useAMS,usenatbib]{mn2e}
+\input psfig.sty
+\usepackage{array}
+%\usepackage{graphicx}
+%\usepackage{epstopdf}
+
+\voffset=-0.8in
+
+\def \gas {\textsc{gasoline}}
+\def \gastwo {\textsc{ESF-gasoline2}}
+\def \changa {\textsc{changa}}
+\def \mean#1{\left< #1 \right>}
+
+%%MISC
+\def \aj {AJ}
+\def \apj {ApJ}
+\def \apjl {ApJL}
+\def \mnras {MNRAS}
+\def \apjs {ApJS}
+\def \aap {A\&A}
+\def \nat {Nature}
+\def \pasp {PASP}
+\def \na {NewA}
+
+\def \etal {et~al.~}
+\def \eg{e.g.}
+\def \Section{\S}
+\def \spose#1{\hbox  to 0pt{#1\hss}}  
+\def \lta{\mathrel{\spose{\lower 3pt\hbox{$\sim$}}\raise  2.0pt\hbox{$<$}}}
+\def \gta{\mathrel{\spose{\lower  3pt\hbox{$\sim$}}\raise 2.0pt\hbox{$>$}}}
+\def \ion#1#2{#1{\footnotesize{#2}}\relax}
+\def \ha       {H$\alpha$}
+\def \hi       {\ion{H}{I}}
+\def \hii      {\ion{H}{II}}
+\def \oii      {[\ion{O}{II}]}
+
+%%UNITS
+\def \kmsmpc {\>{\rm km}\,{\rm s}^{-1}\,{\rm Mpc}^{-1}}
+\def \kms {\ifmmode  \,\rm km\,s^{-1} \else $\,\rm km\,s^{-1}  $ \fi }
+\def \kpc {\ifmmode  {\rm kpc}  \else ${\rm  kpc}$ \fi  }  
+\def \hkpc {\ifmmode  {h^{-1}\rm kpc}  \else ${h^{-1}\rm kpc}$ \fi  }  
+\def \hMpc {\ifmmode  {h^{-1}\rm Mpc}  \else ${h^{-1}\rm Mpc}$ \fi  }  
+\def \Msun {\ifmmode \rm M_{\odot} \else $\rm M_{\odot}$ \fi}
+\def \hMsun {\ifmmode h^{-1}\,\rm M_{\odot} \else $h^{-1}\,\rm M_{\odot}$ \fi}
+\def \hhMsun {\ifmmode h^{-2}\,\rm M_{\odot}\else $h^{-2}\,\rm M_{\odot}$ \fi}
+\def \Lsun {\ifmmode L_{\odot} \else $L_{\odot}$ \fi} 
+\def \hhLsun {\ifmmode h^{-2}\,\rm L_{\odot} \else $h^{-2}\,\rm L_{\odot}$ \fi}
+
+%%COSMOLOGY
+
+\def\LCDM{$\Lambda$CDM }
+\def \LCDM {\ifmmode \Lambda{\rm CDM} \else $\Lambda{\rm CDM}$ \fi}
+\def \sig8 {\ifmmode \sigma_8 \else $\sigma_8$ \fi} 
+\def \Omegam {\ifmmode \Omega_{\rm m} \else $\Omega_{\rm m}$ \fi} 
+\def \Omegab {\ifmmode \Omega_{\rm b} \else $\Omega_{\rm b}$ \fi} 
+\def \Omegar {\ifmmode \Omega_{\rm r} \else $\Omega_{\rm r}$ \fi} 
+\def \fbar {\ifmmode f_{\rm b} \else $f_{\rm b}$ \fi} 
+\def \OmegaL {\ifmmode \Omega_{\rm \Lambda} \else $\Omega_{\rm \Lambda}$\fi} 
+\def \Deltavir {\ifmmode \Delta_{\rm vir} \else $\Delta_{\rm vir}$ \fi}
+\def \rhocrit {\ifmmode \rho_{\rm crit} \else $\rho_{\rm crit}$ \fi}
+
+%DARK MATTER
+\def \rs {\ifmmode r_{\rm s} \else $r_{\rm s}$ \fi} 
+\def \rh {\ifmmode r_{\rm h} \else $r_{\rm h}$ \fi} 
+\def \Rvir {\ifmmode R_{\rm vir} \else $R_{\rm vir}$ \fi}
+\def \Vvir {\ifmmode V_{\rm  vir} \else  $V_{\rm vir}$  \fi} 
+\def \Vmax {\ifmmode V_{\rm  max} \else  $V_{\rm max}$  \fi} 
+\def \Mvir {\ifmmode M_{\rm  vir} \else $M_{\rm  vir}$ \fi}  
+\def \Mhalo {\ifmmode M_{\rm tot} \else $M_{\rm  tot}$ \fi}  
+\def \Nvir {\ifmmode N_{\rm  vir} \else $N_{\rm  vir}$ \fi}  
+\def \Jvir {\ifmmode J_{\rm vir} \else $J_{\rm vir}$ \fi} 
+\def \Evir {\ifmmode E_{\rm vir} \else $E_{\rm vir}$ \fi} 
+\def \lam {\ifmmode \lambda  \else $\lambda$ \fi} 
+\def \lamp {\ifmmode \lambda^{\prime} \else $\lambda^{\prime}$  \fi} 
+\def \lampc {\ifmmode \lambda^{\prime}_{\rm c} \else
+  $\lambda^{\prime}_{\rm c}$  \fi} 
+
+\def \xoff {\ifmmode x_{\rm off} \else $x_{\rm off}$ \fi}
+\def \rhorms {\ifmmode \rho_{\rm rms} \else $\rho_{\rm rms}$ \fi}
+\def \qbar {\ifmmode \bar{q} \else $\bar{q}$ \fi}
+
+%%BARYONS
+\def \Mb {\ifmmode M_{\rm b} \else $M_{\rm b}$ \fi} 
+\def \eSF {\ifmmode \epsilon_{\rm SF} \else $\epsilon_{\rm SF}$ \fi} 
+\def \Md {\ifmmode M_{\rm d} \else $M_{\rm d}$ \fi} 
+\def \Mg {\ifmmode M_{\rm g} \else $M_{\rm g}$ \fi} 
+\def \Rb {\ifmmode R_{\rm b} \else $R_{\rm b}$ \fi} 
+\def \Rd {\ifmmode R_{\rm d} \else $R_{\rm d}$ \fi} 
+\def \Rg {\ifmmode R_{\rm g} \else $R_{\rm g}$ \fi} 
+\def \mgal {\ifmmode m_{\rm gal} \else $m_{\rm gal}$ \fi} 
+\def \rj {\ifmmode {\cal R}_j \else ${\cal R}_j$ \fi} 
+\def \lamgal {\ifmmode \lambda_{\rm gal} \else $\lambda_{\rm gal}$ \fi} 
+\def \Vcirc {\ifmmode V_{\rm circ} \else $V_{\rm circ}$ \fi} 
+\def \Vrot {\ifmmode V_{\rm rot} \else $V_{\rm rot}$ \fi} 
+\def \Vflat {\ifmmode V_{\rm flat} \else $V_{\rm flat}$ \fi} 
+\def \Mstar {\ifmmode M_{\rm star} \else $M_{\rm star}$ \fi} 
+\def \Mgas {\ifmmode M_{\rm gas} \else $M_{\rm gas}$ \fi} 
+\def \Mbar {\ifmmode M_{\rm bar} \else $M_{\rm bar}$ \fi} 
+
+%%MASS-TO-LIGHT RATIOS
+\def \DeltaIMF {\ifmmode \Delta_{\rm IMF} \else $\Delta_{\rm IMF}$ \fi}
+
+\def \VV {\ifmmode V_{\rm 2.2}/V_{200} \else $V_{2.2}/V_{200}$ \fi} 
+\def \dvr {\ifmmode \partial_{\rm VR} \else $\partial_{\rm VR}$ \fi} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Baryon Budget] {NIHAO VII: Predictions for the galactic baryon budget in dwarf to Milky Way mass haloes}
+
+\author[Wang et al.]{Liang Wang$^{1,3}$\thanks{wangliang@pmo.ac.cn}, Aaron A. Dutton$^{2,3}$,
+  Gregory S. Stinson$^3$, Andrea V. Macci\`o$^{2,3}$, 
+\newauthor{Thales Gutcke$^3$, Xi Kang$^1$}\\
+$^1$Purple Mountain Observatory, the Partner Group of MPI f\"ur Astronomie, 2 West Beijing Road, Nanjing 210008, China\\
+$^2$New York University Abu Dhabi, PO Box 129188, Abu Dhabi, UAE\\
+$^3$Max-Planck-Institut f\"ur Astronomie, K\"onigstuhl 17, 69117 Heidelberg, Germany}
+\begin{document}
+
+\date{to be submitted to MNRAS}
+             
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}\pubyear{2015}
+
+\maketitle           
+
+\label{firstpage}
+             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+  We use the NIHAO galaxy formation simulations to make predictions
+  for the baryonic budget  in present day galaxies ranging from dwarf
+  ($\Mhalo\sim10^{10} \Msun$) to Milky Way ($\Mhalo\sim10^{12} \Msun$)
+  masses.  The sample is made of 88 independent high resolution
+  cosmological zoom-in simulations.  NIHAO galaxies reproduce key
+  properties of observed galaxies, such as the stellar mass vs halo
+  mass and cold gas vs stellar mass relations. Thus they make
+  plausible predictions for the baryon budget.  We present the mass
+  fractions of stars, cold gas ($T<10^4$K), cool gas ($10^4 < T <
+  10^5$K), warm-hot gas ($10^5 < T < 10^7$K), and hot gas ($10^7$K$ <
+  T$), inside the virial radius, $R_{200}$.  Compared to the predicted
+  baryon mass, using the dark halo mass and the universal baryon
+  fraction, $f_{\rm b}\equiv \Omega_{\rm b}/\Omega_{\rm m}=0.15$, we
+  find that for all of our haloes, the missing mass is not just outside 
+  the virial radius $\Rvir$, it has been relocated past 2$\Rvir$.  
+  Haloes of mass $\Mhalo\sim 10^{10}\Msun$ are missing $\sim
+  90\%$ of their baryons.  More massive haloes ($\Mhalo\sim
+  10^{12}\Msun$) retain a higher fraction of their baryons, with $\sim
+  30\%$ missing, consistent with observational estimates.    
+%  Finally we show that the baryonic budget of most massive 
+%  galaxies in NIHAO suite can match the observation for most 
+%  components but the cool gas, which requires further 
+%  theoretical and observational work to find the answer where
+%  the cool gas actually is.
+\end{abstract}
+
+\begin{keywords}
+  galaxies: evolution -- galaxies: formation -- galaxies: dwarf -- galaxies: spiral -- 
+  methods: numerical -- cosmology: theory
+\end{keywords}
+
+\setcounter{footnote}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 1: INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{sec:intro}
+Cosmic structure formation has redistributed the baryons from  a
+nearly uniformly distributed plasma into a variety of states,
+including stars, stellar remnants, cold (atomic and molecular) gas,
+and hot (ionized) gas. The theories of galaxy formation can predict
+the amount of mass in these different states, which can in turn be tested by
+observational constraints.  
+
+%% missing baryon problem
+On cosmological scales, the ratio between the total baryonic and
+gravitating mass is measured to be $f_{\rm b}\equiv \Omega_{\rm
+  b}/\Omega_{\rm m}\simeq 0.16$ (The Planck Collaboration 2014).
+However, the cold baryonic mass density implied by several galaxy baryon
+estimates is only 3-8\% of the big bang nucleosynthesis expection
+\citep{Persic92, Fukugita98,  Bell03, McGaugh10}.  The majority of the
+cosmic baryons are thought to be in the form of hot gas around or
+between galaxies \citep{Cen09}. Until recently only a fraction of
+these baryons had been detected \citep{Bregman07, Shull12}.  This
+discrepancy is referred to as the ``missing baryon problem''.
+Recent advances in the detection of gas in the circum
+galactic medium (CGM) have come from the COS survey \citep{Tumlinson11,
+  Tumlinson13, Thom12,  Werk12, Werk13}.  On the scale of Milky Way
+mass haloes $\Mhalo \sim 10^{12}\Msun$ a significant amount of warm
+($10^4 < T < 10^7$K) gas has been detected \citep{Werk14}, accounting
+for 33-88\% of the baryon budget. In the future such observations will
+be extended to a wider range of halo masses.
+
+
+In this paper we make predictions for the baryonic budget for stars,
+cold, warm and hot gas in and around the virial radius of haloes of
+mass ranging from $\Mhalo\sim 10^{10}\Msun$ to $10^{12}\Msun$. We use
+a sample of 88 zoom-in galaxy formation simulations from the NIHAO
+project. NIHAO galaxies are consistent with the stellar mass vs halo
+mass relations from halo abundance matching since redshift $z\sim 4$
+\citep{Wang15}, the galaxy star formation rate vs stellar mass
+relation since $z\sim 4$ \citep{Wang15}, and the cold gas mass vs
+stellar mass relation at $z\sim 0$ (Stinson \etal 2015).  Therefore,
+the simulations make plausible predictions for the mass fractions and
+physical locations of the warm and hot gas components.  We find that
+all the haloes contain less baryons than expected according to the
+cosmic baryonic fraction, but the missing fraction is strongly mass
+dependent.
+
+This paper is organized as follows: The cosmological hydrodynamical
+simulations including star formation and feedback are briefly
+described in  \S\ref{sec:sims}; In \S\ref{sec:budget} we present the
+results including the baryonic budget, baryon distribution, and a
+comparison with observations; \S\ref{sec:sum} gives a summary of our
+results.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 2 SIMULATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Simulations} 
+\label{sec:sims}
+
+In this study we use simulations from the NIHAO (Numerical
+Investigation of a Hundred Astrophysical Objects) project \citep{Wang15}.  
+The initial conditions are created to keep the same numerical
+resolution across the whole mass range with typically a million dark
+matter particles inside the virial radius of the target halo at 
+redshift $z=0$.  The halos to be re-simulated at higher resolution
+with baryons have been extracted from 3 different pure N-body
+simulations with a box size of 60, 20 and 15 $h^{-1}$ Mpc
+respectively.  We adopted the  latest compilation of cosmological
+parameters from the Planck  satellite \citep{Planck14}. 
+More information on the collisionless parent simulations and
+sample  selection can be found in \citet{Dutton14} and \citet{Wang15}
+
+We use the SPH hydrodynamics code {\sc gasoline} \citep{Wadsley04},
+with a revised treatment of  hydrodynamics as described in
+\citet{Keller14}.  The code includes a subgrid model for turbulent
+mixing of metal and energy \citep{Wadsley08}, heating and cooling
+include photoelectric heating of dust grains, ultraviolet (UV) heating
+and ionization and  cooling due to hydrogen, helium and metals
+\citep{Shen10}.  The star formation and feedback modeling follows what
+was used in the MaGICC simulations \citep{Stinson13}.  There are two
+small changes in NIHAO simulations: The change in  number of neighbors
+and the new combination of softening length and  particle mass increases
+the threshold for star formation from  9.3 to 10.3
+cm$^{-3}$, the increase of pre-SN feedback efficiency $\epsilon_{\rm
+  ESF}$, from 0.1 to 0.13.  The more detail on star formation and
+feedback modeling can be found in \citet{Wang15}.
+
+
+
+%% FIGURE 1
+\begin{figure}
+\centerline{
+%  \psfig{figure=barbudget_linear_v3.eps,width=0.5\textwidth}}
+%\centerline{
+%  \psfig{figure=barbudget_v3.eps,width=0.5\textwidth}
+  \psfig{figure=barbudget_linearlog.eps,width=0.5\textwidth}
+}
+\caption{Fractional baryon content of our NIHAO simulations 
+  as a function of halo
+  mass. The green points show the ratio between the baryonic mass
+  (stars + gas) inside the virial radius and the total baryonic mass
+  associated with the dark matter halo and the green lines are best
+  fitting lines. The blue points show the
+  corresponding fraction for the stars. The solid green line and
+  shaded region shows a double power-law fit, together with the
+  1$\sigma$ scatter. For the stellar mass fraction we show several
+  relations from halo abundance matching.    The linear (upper panel)
+  and logarithmic (lower panel) scales emphasize the large amount of
+  ``missing'' baryons and the low star formation efficiencies.}
+\label{fig:budget}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 3 RESULTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Results}
+%\label{sec:results}
+
+%We study the baryonic budget using the full set simulations of the NIHAO project.  
+%The large range of the mass covered by our simulations enables
+%us see the baryon fractions and mass profiles of different 
+%galaxies, depending on the halo mass and stellar content. 
+
+
+%% FIGURE 2
+\begin{figure}
+\centerline{
+  \psfig{figure=ratioprofile_v4.eps,width=0.5\textwidth}
+}
+\caption{Baryon distribution of each galaxy from NIHAO simulations.
+  A comparison of how the baryons distribute in the halo with 
+  different masses. 
+  The lines are color coded by their halo mass, which show a clear
+  trend that the more massive halo preserve more baryons alone
+  the radius.}
+\label{fig:rps}
+\end{figure}
+
+
+
+\section{Baryon budget}
+\label{sec:budget}
+
+We define the fiducial baryonic mass as:
+\begin{equation}
+M_{\rm b} \equiv M_{\rm b}(R_{200})= \frac{f_{\rm b}}{1-f_{\rm b}}M_{\rm dm}(R_{200}) 
+\end{equation}
+where the $M_{\rm dm}$ is the total dark matter mass in the halo, and
+the $f_{\rm b} = \Omegab/\Omegam \sim 0.15$ is the cosmic baryon
+fraction (the ratio between baryon density and mass density including baryonic mass
+plus dark matter), so that the  $M_{\rm b}$ is the baryonic mass inside the
+virial radius if the baryons follow the dark matter closely.
+
+Fig.~\ref{fig:budget} shows the ratio between the  mass of each baryon
+component inside the virial radius 
+to the fiducial baryonic mass for the most massive galaxy in
+each zoom-in region. We present the fractions of total stellar mass
+(blue points), and the total baryonic mass
+including stellar mass plus gas mass (green points).
+For the stellar mass fraction we also show the relations from the halo abundance 
+matching \citep{Moster13, Behroozi13, Kravtsov14}.
+The grey area is the one sigma scatter around the mean value 
+from \citet{Kravtsov14}.
+
+We tried to capture the behaviour of the baryonic mass fraction as a 
+function of the halo mass using a double power law formula:
+\begin{equation}
+\frac{f}{f_0} = \left( 
+                        \frac{M_{200}}{\mathcal{M}_0} 
+                        \right)^\alpha 
+                        \left\{ 0.5 \left[ 1+\left( 
+                        \frac{M_{200}}{\mathcal{M}_0} 
+                        \right)^\gamma \right] 
+                        \right\}^{\frac{\beta-\alpha}{\gamma}}.
+\end{equation}
+In this formula, the lower and higher mass ends have logarithmic slope
+$\alpha$ and $\beta$, respectively, while $\gamma$ regulates how 
+sharp the transition is from the lower to the higher ends.
+The best fit parameters are as follows:
+\begin{eqnarray}
+\mathcal{M}_0  &=&  6.76 \times 10^{10} \nonumber \\
+f_0  &=&   0.336 \nonumber \\
+\alpha  &=&   0.684 \\
+\beta  &=&   0.205 \nonumber \\
+\gamma  &=&   3.40\nonumber  
+\end{eqnarray}
+The green shaded region indicates the scatter about the best fit line. These are 
+measured in four different mass ranges, and are  summarized in Table.~\ref{tab:sigma}.
+
+
+
+\begin{table}
+\caption{Scatters for best fit parameters for the total baryonic mass 
+fraction computed inside one virial radius, $R_{200}$,  as a function of halo mass $M_{200}$
+in different mass ranges.} 
+\begin{center}
+\begin{tabular}{lc}
+\hline
+Mass Range & $\sigma $ \\
+\hline
+$3\times 10^{9}\Msun < M_{200} <2\times 10^{10} \Msun$ & 0.151 \\
+$2\times 10^{10}\Msun < M_{200} < 7\times 10^{10} \Msun$ & 0.236 \\
+$7\times 10^{10}\Msun < M_{200} < 3\times 10^{11} \Msun$ & 0.125 \\
+$3\times 10^{11}\Msun < M_{200} < 3.5\times 10^{12} \Msun$ & 0.0518 \\
+\hline
+\end{tabular}
+\label{tab:sigma}
+\end{center}
+\end{table}
+
+
+
+The trends of each component fraction are similar, in that  the
+fractions are relatively low in low mass haloes, and increase as the
+halo mass increases.  The main difference between the different
+components is the slope, with the baryonic mass fraction having a
+shallower slope than the stellar mass fraction.  This is because in low mass haloes
+($\Mhalo\sim 10^{10}\Msun$) most of the baryons are in the form of
+gas, while in the highest mass haloes we study ($\Mhalo\sim
+10^{12}\Msun$) there are roughly equal amounts of stars and gas.
+
+Fig.~\ref{fig:budget} shows that all haloes in our study contain
+less than the universal fraction of baryons. The
+upper panel uses a linear y-axis scale, which highlights the large
+amount of baryons that are missing, especially in low mass haloes. The
+logarithmic scale in the lower panel highlights the power-law nature of the relatons.
+
+Since the haloes we study are above the mass where the cosmic UV
+background prevents gas from cooling, the missing baryons have most
+likely been ejected from the central galaxies in supernova/stellar
+feedback driven winds.  Although the lower mass galaxies have
+converted a smaller fraction of their available baryons into stars,
+and hence there is proportionally less energy available to drive an
+outflow, they have expelled a larger fraction of their baryons,
+consistent with expectations from energy driven gas outflows
+\citep[e.g.,][]{Dutton12}.
+
+
+\subsection{Where are the missing baryons?}
+\label{sec:where}
+
+Fig.~\ref{fig:rps} shows the mass ratio profiles of total baryons  for
+each simulation. Here the y-axis is the ratio between the baryonic to
+dark matter mass, $M_{\rm b}(<R) / M_{\rm dm}(<R)$, enclosed
+within a sphere of radius, $R$, normalized by the cosmic
+baryon-to-dark matter ratio, $\Omega_{\rm b}/\Omega_{\rm dm}$.
+
+Each solid curve represents a halo, and the curves are colored by
+their halo mass (red for high masses to blue for low masses).  Broadly
+speaking, the curves have a similar shape, with a normalization that
+depends on halo mass. They have a cusp in  the central region where the
+stars and cold gas dominate, then become flat in the outer region.
+More massive haloes have higher baryon fractions at all radii.  At
+small radii, the baryon to dark matter ratio is higher than the cosmic
+value due to gas dissipation.  Even beyond the virial radius, there is
+little change in the baryon fraction up to 2 virial radii.  We thus
+conclude that the missing baryons are well outside of the virial
+radius.
+
+%The curves show a gradual transition based on mass that confirms 
+%what we find in Fig.~\ref{fig:budget}. 
+%In general terms, the lowest mass halos have a small peak but drop
+%relatively steeply until $\sim$ 0.2R$_{200}$, then the curves rise slowly.
+%As the masses increase, the central peaks rise and the curves in the 
+%outer part are flater.
+%Finally, the most massive galaxies have an almost constant curve 
+%which are close but still less than 1.
+
+
+
+%% FIGURE 3
+\begin{figure}
+\centerline{
+  \psfig{figure=budget.eps,width=0.5\textwidth}
+}
+\caption{Baryonic budget (the fraction of different components) 
+  of $3.5\times 10^{11} < M_{200}/\Msun <
+  3.5 \times 10^{12}$ NIHAO galaxies (blue points 
+  with 1$\sigma$ error bars) compared with observations of 
+  M$_{200}$ = 10$^{12.2}$ $\Msun$ galaxies (shaded regions)
+  }
+\label{fig:comparison}
+\end{figure}
+
+
+
+%% TABLE 2
+\begin{table*}
+\caption{The baryonic budget parameters for galaxies in NIHAO sample
+  in different mass bins. We refer to gas in the temperature range  T
+  $<$ $10^4$ K as cold; $10^4$ K $\leqslant$ T $<$ $10^5$ K as cool;
+  $10^5$ K $\leqslant$ T $<$ $10^7$ K as warm;  and T $\geqslant$
+  $10^7$ K as hot.}
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+\input{budgettable4.txt}
+\hline
+\end{tabular}
+\label{tab:comperison}
+\end{center}
+\end{table*}
+
+
+
+\subsection{Comparison with Observations of Milky Way mass haloes}
+Since the CGM is too diffuse to create emission lines, it must be
+observed using quasar absorption lines.
+The COS-HALOs survey is filling in details about the $z \sim 0$
+CGM \citep{Peeples14, Tumlinson11, Tumlinson13, Werk12, Werk13, Werk14}.
+For the CGM of low-redshift $L^*$ galaxies, \citet{Tumlinson13} and 
+\citet{Peeples14} constrain the mass of  the
+warm-hot CGM ($T \sim 10^{5-7}$), \citet{Werk14} provides a strict
+lower limit to the mass of cool material ($T \sim 10^{4-5}$) in the
+CGM of these galaxies.  In a study using X-rays, 
+\citet{Anderson13} place a
+constraints on the mass of  hot gas ($T > 10^7$) residing in the
+extended hot halos.  
+
+In Fig.~\ref{fig:comparison}, we show the mean values and standard deviation
+of the mass fraction of stars and different components of gas in our
+most massive galaxies ($3.49 \times 10^{11} \Msun$ $<$ M$_{200}$ $<$ 
+$3.53 \times 10^{12} \Msun$) with blue points and error bars.
+The gas is assigned to a range of temperature bins: 
+cold gas (T $< 10^4$ K), cool gas ($10^4$ K $<$ T $< 10^5$ K), 
+warm gas ($10^5$ K $<$ T $< 10^7$ K) and hot gas (T $> 10^7$ K).
+The observational constraints are shown with the same colour scheme
+in Fig. 11 in \citet{Werk14}.
+
+In this plot \citet{Werk14} provides observational constraints for 
+CGM gas mass that are shown as the shaded bars.
+The stellar  mass range comes from
+halo abundance matching as described in \citet{Kravtsov14}.  
+The cold disk gas mass comes from from \citet{Dutton11}.  
+
+The observations and the simulations match well in every phase
+outside of the cool CGM gas, where the observations find $3\times$
+the mass that simulations predict.  If the observations are correct,
+the simulations have either ejected too far gas that could be cool, or 
+they have created a CGM with the wrong mix of gas temperatures. The
+total gas fractions (0.39 in COS-HALOs, 0.41 in NIHAO) suggest the
+latter option.  As the CGM of lower mass galaxies will soon be observed ,
+Table~\ref{tab:comperison} lists information about CGM
+mass fractions of the different components of gas in haloes down to a
+halo mass of $\sim 10^{10}\Msun$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 4: SUMMARY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary}
+\label{sec:sum}
+
+We have used the NIHAO galaxy simulation suite \citep{Wang15} to study
+the statistical features of the baryonic budget and distribution
+spanning halo masses of $\sim 10^{10}$ to $\sim 10^{12}\Msun$. NIHAO
+is a large (currently 88) set of high resolution cosmological
+hydrodynamical galaxy formation simulations. As shown in previous papers
+the NIHAO galaxies reproduce several key observed scaling relations.
+We summarize our results as follows:
+
+\begin{itemize}
+\item All of the NIHAO haloes have a lower baryon to dark matter ratio, 
+      inside the viriral radius, than the cosmic baryon fraction. 
+
+\item The missing baryons in all haloes are beyond 2 virial radii.
+
+\item Lower mass haloes have lost a larger fraction of their baryons, 
+      even though they convert a lower fraction of the baryons into stars.
+
+\item For the highest mass haloes in our study $\sim 10^{12}\Msun$ 
+      our simulations are consistent with the observed fractions of stars, 
+      cold gas, warm and hot gas. However, we underpredict 
+      the cool ($10^4 < T < 10^5 K$) gas with $f_{\rm cool}=0.11\pm0.06$ 
+      vs 0.28-0.48 observed.
+
+\item This discrepancy may indicate that our feedback model pushes the 
+      gas too far, or puts gas in the wrong phases, 
+      and can be resolved with future observations. 
+      Since we match the overall gas fraction we think that  
+      there might be some problem in mixing the gas temperature.
+\end{itemize}
+
+
+\section*{Acknowledgments} 
+
+{\sc Gasoline} was written by Tom Quinn and James Wadsley. Without
+their contribution, this paper would have been impossible.
+The simulations were performed on the {\sc theo} cluster of the
+Max-Planck-Institut f\"ur Astronomie and the {\sc hydra} cluster at
+the Rechenzentrum in Garching; and the Milky Way supercomputer, funded
+by the Deutsche Forschungsgemeinschaft (DFG) through Collaborative
+Research Center (SFB 881) "The Milky Way System" (subproject Z2),
+hosted and co-funded by the J\"ulich Supercomputing Center (JSC). We
+greatly appreciate the contributions of all these computing
+allocations.  AAD, GSS and AVM acknowledge support through the
+Sonderforschungsbereich SFB 881 “The Milky Way System” (subproject A1)
+of the German Research Foundation (DFG).  The analysis made use of the
+pynbody package \citep{Pontzen13}.
+%
+The authors acknowledge support from the MPG-CAS through the
+partnership programme between the MPIA group lead by AVM and the PMO
+group lead by XK.
+LW acknowledges support of the MPG-CAS student
+programme.
+XK acknowledge the support from 973 program (No. 2015CB857003, 2013CB834900),
+NSFC project No.11333008 and the ``Strategic Priority Research Program the Emergence
+of Cosmological Structures'' of the CAS(No.XD09010000).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{thebibliography}{}
+
+%%AAAAAAAA
+
+% Extended Hot Halos around Isolated Galaxies Observed in the ROSAT All-Sky Survey
+\bibitem[Anderson et al.(2013)]{Anderson13} Anderson, M.~E., Bregman, J.~N., Dai, X.\ 2013, \apj, 762, 106
+
+% Fundamental differences between SPH and grid methods
+\bibitem[Agertz et al.(2007)]{Agertz07} Agertz, O., Moore, B., Stadel, J.\ 2007, \mnras, 380, 963
+
+%%BBBBBBBB
+
+%The Average Star Formation Histories of Galaxies in Dark Matter Halos
+% from z = 0-8
+\bibitem[Behroozi et al.(2013)]{Behroozi13} Behroozi, P.~S.,
+  Wechsler, R.~H., \& Conroy, C.\ 2013, \apj, 770, 57
+
+%A First Estimate of the Baryonic Mass Function of Galaxies
+\bibitem[Bell et al.(2003)]{Bell03} Bell, E.~F., McIntosh, D.~H., Katz, N., Weinberg, M.~D.,\ 2003, \apj, 585, 117
+
+% Multiscale Gaussian Random Fields and Their Application to Cosmological Simulations
+%\bibitem[Bertschinger(2001)]{Bertschinger01} Bertschinger, E.\ 2001, 
+%\apjs, 137, 1 
+
+% The Search for the Missing Baryons at Low Redshift
+\bibitem[Bregman (2007)]{Bregman07}
+Bregman, J.~N.\ 2007, ARAA, 45, 221
+
+%% CCCCCCCC
+
+%Where are the baryons
+\bibitem[Cen \& Ostriker (1999)]{Cen09} 
+Cen, R.~Y., Ostriker, J.~P.\ 1999, \apj, 514, 1
+
+
+
+%% DDDDDDDD
+
+%Dark halo response and the stellar initial mass function in early-type and late-type galaxies
+\bibitem[Dutton et al.(2011)]{Dutton11} Dutton, A.~A., Conroy, 
+  C., van den Bosch, F.~C., et al.\ 2011, \mnras, 416, 322
+  
+%The baryonic Tully-Fisher relation and galactic outflows
+\bibitem[Dutton(2012)]{Dutton12} Dutton, A.~A.\ 2012,
+  \mnras, 424, 3123
+  
+%Cold dark matter haloes in the Planck era: evolution of structural parameters for Einasto and NFW profiles
+\bibitem[Dutton \& Macci{\`o}(2014)]{Dutton14} Dutton,
+  A.~A., \& Macci{\`o}, A.~V.\ 2014, \mnras, 441, 3359 
+
+
+%% EEEEEEEEE
+
+    
+%% FFFFFFFFF
+
+% The Cosmic Baryon Budget
+\bibitem[Fukugita et al.(1998)]{Fukugita98} Fukugita, M., Hogan, C.~J., Peebles, P.~J.~F.\ 1998, \apj, 503, 518
+
+%% GGGGGGGGG
+
+
+
+
+%% HHHHHHHHH
+
+
+
+%% JJJJJJJJJJJ
+
+
+%% KKKKKKKKKKK
+
+%A superbubble feedback model for galaxy simulations
+\bibitem[Keller et al.(2014)]{Keller14} Keller, B.~W., Wadsley, 
+  J., Benincasa, S.~M., \& Couchman, H.~M.~P.\ 2014, \mnras, 442, 3013
+
+% Stellar mass -- halo mass relation and star formation efficiency in
+% high-mass halos
+\bibitem[Kravtsov et al.(2014)]{Kravtsov14} Kravtsov, A., 
+Vikhlinin, A., \& Meshscheryakov, A.\ 2014, arXiv:1401.7329 
+
+  
+%% LLLLLLLLL
+
+
+%% MMMMMMMMM
+
+% The Baryon Content of Cosmic Structures
+\bibitem[McGaugh et al.(2010)]{McGaugh10} McGaugh, S.~S., 
+Schombert, J.~M., de Blok, W.~J.~G., Zagursky, M.~J.\ 2010, \mnras,
+708, 14
+
+% Galactic star formation and accretion histories from matching galaxies to dark matter haloes
+\bibitem[Moster et al.(2013)]{Moster13} Moster, B.~P., Naab, T., 
+\& White, S.~D.~M.\ 2013, \mnras, 428, 3121 
+
+
+
+
+
+%% NNNNNNNNN
+
+
+
+
+%% OOOOOOOO
+
+
+%% PPPPPPPPP
+
+%Planck 2013 results. XVI. Cosmological parameters
+\bibitem[the Planck Collaboration et  al.(2014)]{Planck14}
+  Planck Collaboration, Ade, P.~A.~R., Aghanim, N., et al.\ 2014,
+  \aap, 571, AA16 
+ 
+% A Budget and Accounting of Metals at z ~ 0: Results from the COS-Halos Survey
+\bibitem[Peeples et al.(2014)]{Peeples14} Peeples, M.~S., Werk, J.~K., Tumlinson, J., et al.\ 2014, \apj, 786, 54
+
+% Dark MaGICC: the effect of dark energy on disc galaxy formation. Cosmology does matter
+%\bibitem[Penzo et al.(2014)]{Penzo14} Penzo, C., Macci{\`o}, 
+%  A.~V., Casarini, L., Stinson, G.~S., \& Wadsley, J.\ 2014, \mnras, 442, 176
+
+% The baryon content of the universe
+\bibitem[Persic \& Salucci(1992)]{Persic92} Persic, M., Salucci, P.\ 1992, \mnras, 258, 14
+
+%pynbody: N-Body/SPH analysis for python
+\bibitem[Pontzen et al.(2013)]{Pontzen13} Pontzen, A., Ro{\v s}kar, R., Stinson, G., \& Woods, R.\ 2013, Astrophysics Source Code Library, 1305.002 
+
+
+%% RRRRRRRRRRR
+
+%Evolution of the Mass-Metallicity Relations in Passive and Star-forming Galaxies from SPH-cosmological Simulations
+  
+%Multiphase smoothed-particle hydrodynamics
+%\bibitem[Ritchie \& Thomas(2001)]{Ritchie01} Ritchie, B.~W.,
+%  \& Thomas, P.~A.\ 2001, \mnras, 323, 743
+
+%% SSSSSSSSSSSS
+
+% The enrichment of the intergalactic medium with adiabatic feedback - I. Metal cooling and metal diffusion
+\bibitem[Shen et al.(2010)]{Shen10} Shen, S., Wadsley, J., 
+\& Stinson, G.\ 2010, \mnras, 407, 1581 
+
+% The Baryon Census in a Multiphase Intergalactic Medium: 30% of the Baryons May Still be Missing
+\bibitem[Shull et al.(2012)]{Shull12}
+Shull, J.~M., Smith, B.~D., Danforth, C.~W.\ 2012, \apj, 759, 23
+
+%Making Galaxies In a Cosmological Context: the need for early stellar feedback
+\bibitem[Stinson et al.(2013)]{Stinson13} Stinson, G.~S., Brook, 
+C., Macci{\`o}, A.~V., et al.\ 2013, \mnras, 428, 129 
+
+
+
+%% TTTTTTTTTTT
+
+% Not Dead Yet: Cool Circumgalactic Gas in the Halos of Early-type Galaxies
+\bibitem[Thom et al.(2012)]{Thom12}
+Thom, C., Tumlinson, J., Werk, J.~K.\ 2012, \apjl, 758, L41
+
+% The Large, Oxygen-Rich Halos of Star-Forming Galaxies Are a Major Reservoir
+% of Galactic Metals
+\bibitem[Tumlinson et al.(2011)]{Tumlinson11} Tumlinson, J., Thom, C., Werk, J., et al.\ 2011, Science, 334, 948
+
+% The COS-Halos Survey: Rationale, Design and a Census of Circumgalactic Neutral Hydrogen
+\bibitem[Tumlinson et al.(2013)]{Tumlinson13} Tumlinson, J., Thom, C., Werk, J., et al.\ 2013, \apj, 777, 59
+
+%% VVVVVVVVVVVV
+
+
+
+%% WWWWWWWWWWWWWW
+
+%Gasoline: a flexible, parallel implementation of TreeSPH
+\bibitem[Wadsley et al.(2004)]{Wadsley04} Wadsley, J.~W., Stadel, 
+J., \& Quinn, T.\ 2004, \na, 9, 137 
+
+%On the treatment of entropy mixing in numerical cosmology
+\bibitem[Wadsley et al.(2008)]{Wadsley08} Wadsley, J.~W., 
+Veeravalli, G., \& Couchman, H.~M.~P.\ 2008, \mnras, 387, 427 
+
+  %NIHAO project I: Reproducing the inefficiency of galaxy formation across cosmic time with a large sample of cosmological hydrodynamical simulations
+\bibitem[Wang et al.(2015)]{Wang15} Wang, L., Dutton, A.~A.,  Stinson, G.~S., et al.\ 2015, \mnras, 454, 83
+  
+% The COS-Halos Survey: Keck LRIS and Magellan MagE Optical Spectroscopy
+\bibitem[Werk et al.(2012)]{Werk12} Werk, J.~k., Prochaska, J.~X., Thom, C., et al.\ 2012, \apjs, 198, 3
+
+% The COS-Halos Survey: An Empirical Description of Metal-line Absorption in the Low-redshift Circumgalactic Medium
+\bibitem[Werk et al.(2013)]{Werk13} Werk, J.~k., Prochaska, J.~X., Thom, C., et al.\ 2013, \apjs, 204, 17
+
+%The COS-Halos Survey: Physical Conditions and Baryonic Mass in the Low-redshift Circumgalactic Medium
+\bibitem[Werk et al.(2014)]{Werk14} Werk, J.~k., Prochaska, J.~X., Thom, C., et al.\ 2014, \apj, 792, 8
+
+
+%% YYYYYYYYYYYY
+
+
+%% ZZZZZZZZZZZZZ
+
+\end{thebibliography}
+
+\label{lastpage}
+\end{document}
