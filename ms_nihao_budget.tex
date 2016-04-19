@@ -254,6 +254,17 @@ feedback modeling can be found in \citet{Wang15}.
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 3 RESULTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Results}
+%\label{sec:results}
+
+%We study the baryonic budget using the full set simulations of the NIHAO project.  
+%The large range of the mass covered by our simulations enables
+%us see the baryon fractions and mass profiles of different 
+%galaxies, depending on the halo mass and stellar content. 
+
 %% FIGURE 1
 \begin{figure}
 \centerline{
@@ -277,19 +288,21 @@ feedback modeling can be found in \citet{Wang15}.
 \label{fig:budget}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% SECTION 3 RESULTS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Results}
-%\label{sec:results}
-
-%We study the baryonic budget using the full set simulations of the NIHAO project.  
-%The large range of the mass covered by our simulations enables
-%us see the baryon fractions and mass profiles of different 
-%galaxies, depending on the halo mass and stellar content. 
-
-
 %% FIGURE 2
+\begin{figure*}
+\centerline{
+  \psfig{figure=budgetpro.eps,width=0.99\textwidth}
+}
+\caption{Radial profile of the mass fraction of the gas in each phase
+         to total baryon mass in each radial bin 
+         at z=0 for all galaxies in NIHAO sample.
+         Each solid line is from one galaxy and color coded with
+         the halo mass.}
+\label{fig:corona}
+\end{figure*}
+
+
+%% FIGURE 3
 \begin{figure}
 \centerline{
   \psfig{figure=ratioprofile_v4.eps,width=0.5\textwidth}
@@ -351,30 +364,15 @@ f_0  &=&   0.336 \nonumber \\
 \beta  &=&   0.205 \nonumber \\
 \gamma  &=&   3.40\nonumber  
 \end{eqnarray}
-The green shaded region indicates the scatter about the best fit line. These are 
-measured in four different mass ranges, and are  summarized in Table.~\ref{tab:sigma}.
-
-
-
-\begin{table}
-\caption{Scatters for best fit parameters for the total baryonic mass 
-fraction computed inside one virial radius, $R_{200}$,  as a function of halo mass $M_{200}$
-in different mass ranges.} 
-\begin{center}
-\begin{tabular}{lc}
-\hline
-Mass Range & $\sigma $ \\
-\hline
-$3\times 10^{9}\Msun < M_{200} <2\times 10^{10} \Msun$ & 0.151 \\
-$2\times 10^{10}\Msun < M_{200} < 7\times 10^{10} \Msun$ & 0.236 \\
-$7\times 10^{10}\Msun < M_{200} < 3\times 10^{11} \Msun$ & 0.125 \\
-$3\times 10^{11}\Msun < M_{200} < 3.5\times 10^{12} \Msun$ & 0.0518 \\
-\hline
-\end{tabular}
-\label{tab:sigma}
-\end{center}
-\end{table}
-
+The green shaded region indicates the scatter about the best fit line,
+{\bf which are 0.151 for haloes with mass in the range of  
+$3\times 10^{9}\Msun < M_{200} <2\times 10^{10} \Msun$, 0.236 for
+halo mass in 
+$2\times 10^{10}\Msun < M_{200} < 7\times 10^{10} \Msun$,
+0.125 for halo mass in
+$7\times 10^{10}\Msun < M_{200} < 3\times 10^{11} \Msun$
+and 0.0518 for halo mass in
+$3\times 10^{11}\Msun < M_{200} < 3.5\times 10^{12} \Msun$.}
 
 
 The trends of each component fraction are similar, in that  the
@@ -402,6 +400,11 @@ outflow, they have expelled a larger fraction of their baryons,
 consistent with expectations from energy driven gas outflows
 \citep[e.g.,][]{Dutton12}.
 
+\subsection{Mass budget of the corona}
+\label{sec:corona}
+
+In Fig.~\ref{fig:corona}, we present the radial distribution of 
+gas in different phases normalized to the 
 
 \subsection{Where are the missing baryons?}
 \label{sec:where}
@@ -435,7 +438,7 @@ radius.
 
 
 
-%% FIGURE 3
+%% FIGURE 4
 \begin{figure}
 \centerline{
   \psfig{figure=budget.eps,width=0.5\textwidth}
@@ -451,7 +454,7 @@ radius.
 
 
 
-%% TABLE 2
+%% TABLE 1
 \begin{table*}
 \caption{The baryonic budget parameters for galaxies in NIHAO sample
   in different mass bins. We refer to gas in the temperature range  T
