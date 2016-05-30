@@ -66,7 +66,7 @@
 \def \Vvir {\ifmmode V_{\rm  vir} \else  $V_{\rm vir}$  \fi} 
 \def \Vmax {\ifmmode V_{\rm  max} \else  $V_{\rm max}$  \fi} 
 \def \Mvir {\ifmmode M_{\rm  vir} \else $M_{\rm  vir}$ \fi}  
-\def \Mhalo {\ifmmode M_{\rm tot} \else $M_{\rm  tot}$ \fi}  
+\def \Mhalo {\ifmmode M_{200} \else $M_{200}$ \fi}  
 \def \Nvir {\ifmmode N_{\rm  vir} \else $N_{\rm  vir}$ \fi}  
 \def \Jvir {\ifmmode J_{\rm vir} \else $J_{\rm vir}$ \fi} 
 \def \Evir {\ifmmode E_{\rm vir} \else $E_{\rm vir}$ \fi} 
@@ -95,7 +95,8 @@
 \def \Vflat {\ifmmode V_{\rm flat} \else $V_{\rm flat}$ \fi} 
 \def \Mstar {\ifmmode M_{\rm star} \else $M_{\rm star}$ \fi} 
 \def \Mgas {\ifmmode M_{\rm gas} \else $M_{\rm gas}$ \fi} 
-\def \Mbar {\ifmmode M_{\rm bar} \else $M_{\rm bar}$ \fi} 
+\def \Mbar {\ifmmode M_{\rm bar} \else $M_{\rm bar}$ \fi}
+\def \Rbar {\ifmmode R_{\rm bar} \else $R_{\rm bar}$ \fi} 
 
 %%MASS-TO-LIGHT RATIOS
 \def \DeltaIMF {\ifmmode \Delta_{\rm IMF} \else $\Delta_{\rm IMF}$ \fi}
@@ -139,16 +140,13 @@ $^3$Max-Planck-Institut f\"ur Astronomie, K\"onigstuhl 17, 69117 Heidelberg, Ger
   T$), inside the virial radius, $R_{200}$.  Compared to the predicted
   baryon mass, using the dark halo mass and the universal baryon
   fraction, $f_{\rm b}\equiv \Omega_{\rm b}/\Omega_{\rm m}=0.15$, we
-  find that for all of our haloes, the missing mass is not just outside 
-  the virial radius $\Rvir$, it has been relocated past 2$\Rvir$.  
-  Haloes of mass $\Mhalo\sim 10^{10}\Msun$ are missing $\sim
-  90\%$ of their baryons. 
-  {\bf Cool gas dominates the fraction of total baryons surrounding
-  galaxies up to several times of virial radius, in which most of
-  them are well outside of virial radius.}
-   More massive haloes ($\Mhalo\sim
+  find that all of our haloes {\bf are missing baryons. The missing
+    mass been relocated past 2 virial radii, and is dominated by cool gas.}
+   Haloes of mass $\Mhalo\sim 10^{10}\Msun$ are missing
+  $\sim 90\%$ of their baryons.  More massive haloes ($\Mhalo\sim
   10^{12}\Msun$) retain a higher fraction of their baryons, with $\sim
-  30\%$ missing, consistent with observational estimates.    
+  30\%$ missing, consistent with observational estimates.
+  
 %  Finally we show that the baryonic budget of most massive 
 %  galaxies in NIHAO suite can match the observation for most 
 %  components but the cool gas, which requires further 
@@ -179,52 +177,53 @@ observational constraints.
 %% missing baryon problem
 On cosmological scales, the ratio between the total baryonic and
 gravitating mass is measured to be $f_{\rm b}\equiv \Omega_{\rm
-  b}/\Omega_{\rm m}\simeq 0.16$ (The Planck Collaboration 2014).
+  b}/\Omega_{\rm m}\simeq 0.15$ (The Planck Collaboration 2014).
 However, the cold baryonic mass density implied by several galaxy baryon
-estimates is only 3-8\% of the big bang nucleosynthesis expection
+estimates is only 3-8\% of the big bang nucleosynthesis expectation
 \citep{Persic92, Fukugita98,  Bell03, McGaugh10}.  The majority of the
 cosmic baryons are thought to be in the form of hot gas around or
 between galaxies \citep{Cen09}. Until recently only a fraction of
 these baryons had been detected \citep{Bregman07, Shull12}.  This
 discrepancy is referred to as the ``missing baryon problem''.
-{\bf Several theoretical research with cosmological simulation
-have constrained the phase status and cosmological enviroments of
-the potential reservior to hide the missing baryons 
+{\bf Several theoretical studies with cosmological simulations
+have constrained the phase and cosmological environments of
+the potential reservoirs of the missing baryons 
 \citep{Yoshida05, He05, Dave10, Zhu11, Haider16}.}
 
-{\bf The circum galactic medium (CGM) is one major potential 
-reservior of missing baryons in halo scale.}
-Recent advances in the detection of  gas in the CGM have come 
-from the COS survey \citep{Tumlinson11,
+{\bf The circum galactic medium (CGM) is a major potential  reservoir
+  of the missing baryons.}  Recent advances in the detection of  gas
+in the CGM have come  from the COS survey \citep{Tumlinson11,
   Tumlinson13, Thom12,  Werk12, Werk13}.  On the scale of Milky Way
 mass haloes $\Mhalo \sim 10^{12}\Msun$ a significant amount of warm
 ($10^4 < T < 10^7$K) gas has been detected \citep{Werk14}, accounting
 for 33-88\% of the baryon budget. In the future such observations will
 be extended to a wider range of halo masses.
-{\bf To understand the physical properties of CGM and the origins 
-of components in each phase has been shown to be able to test the
-impact of feedback models \citep{Sharma12,Marasco13}.
-\citet{Dave09} predicted galactic halo baryon fractions of
-galaxies with halo mass range from $10^{11} \Msun$ to
-$10^{13} \Msun$
-cosmological hydrodynamic simulations with a well-constrained
-model for galactic outflow, which found that, without outflow
-model, the baryon fraction is roughly the cosmic baryonic 
-fraction, but with outflow in the simulation, the baryon fraction
-is increasingly suppressed in haloes to lower mass. By comparing
-results at z=3 and z=0, they showed the large haloes remove their
-baryons at early epoch while small haloes lose baryons more
-recently due to wind material takes longer to return to low-mass
-galaxies than high-mass galaxies.
-\citet{Sokolowska16} studied halo gas of three Milky way-sized 
-galaxies using cosmological zoom-in simulations. They found that
-most of missing baryons actually resides in warm-hot and hot gas
-which contribute to 80\% of the total gas reservior. 
-The recovered baryon fraction within 3 virial radii is 90\% and 
-can solve the missing baryon problem.
-The warm-hot medium is sensitive to the feedback model so that
-the reliable spatial mapping of warm-hot medium will provide 
-a stringent test for feedback models.}
+%{\bf ??? To understand
+%  the physical properties of the CGM and the origins of components in
+%  each phase has been shown to be able to test the impact of feedback
+%  models \citep{Sharma12,Marasco13}???
+  {\bf The physical properties of the CGM has been shown to be able to
+    test feedback models \citep{Sharma12,Marasco13}.  \citet{Dave09}
+    predicted galactic halo baryon fractions of galaxies with halo
+    masses ranging from $10^{11} \Msun$ to $10^{13} \Msun$ using
+    cosmological hydrodynamical simulations with a well-constrained
+    model for galactic outflows.  They found that, without the outflow
+    model, the baryon fraction inside the virial radius is roughly the
+    cosmic baryonic fraction, but with the outflow model, the baryon
+    fraction is increasingly suppressed in lower mass haloes.  By
+    comparing results at $z=3$ and $z=0$, they showed that large
+    haloes remove their baryons at early times while small haloes lose
+    baryons more recently due to the wind material taking longer to
+    return to low-mass galaxies than high-mass galaxies.
+%  
+  \citet{Sokolowska16} studied the halo gas of three Milky way-sized
+  galaxies using cosmological zoom-in simulations. They found that
+  most of missing baryons actually resides in warm-hot and hot gas
+  which contribute to 80\% of the total gas reservoir.  The recovered
+  baryon fraction within 3 virial radii is 90\%.  The warm-hot medium
+  is sensitive to the feedback model so that a reliable spatial
+  mapping of the warm-hot medium will provide  a stringent test for
+  feedback models.}
 
 
 In this paper we make predictions for the baryonic budget for stars,
@@ -235,12 +234,12 @@ project. NIHAO galaxies are consistent with the stellar mass vs halo
 mass relations from halo abundance matching since redshift $z\sim 4$
 \citep{Wang15}, the galaxy star formation rate vs stellar mass
 relation since $z\sim 4$ \citep{Wang15}, and the cold gas mass vs
-stellar mass relation at $z\sim 0$ (Stinson \etal 2015).  Therefore,
+stellar mass relation at $z\sim 0$ \citep{Stinson15}.  Therefore,
 the simulations make plausible predictions for the mass fractions and
 physical locations of the warm and hot gas components.  We find that
 all the haloes contain less baryons than expected according to the
 cosmic baryonic fraction, but the missing fraction is strongly mass
-dependent.
+dependent.  {\bf Mention Gutcke et al. 2016}
 
 This paper is organized as follows: The cosmological hydrodynamical
 simulations including star formation and feedback are briefly
@@ -308,14 +307,12 @@ feedback modeling can be found in \citet{Wang15}.
 %  \psfig{figure=barbudget_v3.eps,width=0.5\textwidth}
   \psfig{figure=barbudget_linearlog.eps,width=0.5\textwidth}
 }
-\caption{Fractional baryon content of our NIHAO simulations 
-  as a function of halo
-  mass. The green points show the ratio between the baryonic mass
-  (stars + gas) inside the virial radius and the total baryonic mass
-  associated with the dark matter halo and the green lines are best
-  fitting lines. The blue points show the
-  corresponding fraction for the stars. The solid green line and
-  shaded region shows a double power-law fit, together with the
+\caption{Fractional baryon content of our NIHAO simulations  as a
+  function of halo mass. The green points show the ratio between the
+  baryonic mass (stars + gas) inside the virial radius and the total
+  baryonic mass associated with the dark matter halo. The blue points
+  show the corresponding fraction for the stars. The solid green line
+  and shaded region shows a double power-law fit, together with the
   1$\sigma$ scatter. For the stellar mass fraction we show several
   relations from halo abundance matching.    The linear (upper panel)
   and logarithmic (lower panel) scales emphasize the large amount of
@@ -332,50 +329,11 @@ feedback modeling can be found in \citet{Wang15}.
          to total baryon mass in each radial bin 
          at z=0 for all galaxies in NIHAO sample.
          Each solid line is from one galaxy and color coded with
-         the halo mass.}
+         the halo mass. {\bf tickmarks overlap. fix. use $R_{200}$ for virial radius}}
 \label{fig:corona}
 \end{figure*}
 
 
-%% FIGURE 3
-\begin{figure}
-\centerline{
-  \psfig{figure=ratioprofile_v4.eps,width=0.5\textwidth}
-}
-\caption{Baryon distribution of each galaxy from NIHAO simulations.
-  A comparison of how the baryons distribute in the halo with 
-  different masses. 
-  The lines are color coded by their halo mass, which show a clear
-  trend that the more massive halo preserve more baryons alone
-  the radius.}
-\label{fig:rps}
-\end{figure}
-
-
-%% FIGURE 4
-\begin{figure}
-\centerline{
-  \psfig{figure=missing_vr.eps,width=0.5\textwidth}
-}
-\caption{Baryon radius as function of total mass within virial 
-         radius. The points are color coded by the ratio 
-         between baryon radius to virial radius of each galaxy.}
-\label{fig:missvr}
-\end{figure}
-
-
-%% FIGURE 5
-\begin{figure*}
-\centerline{
-  \psfig{figure=budget_inout.eps,width=0.99\textwidth}
-}
-\caption{Mass fraction of gas mass in four phases to the fiducial
-         baryonic mass within virial radius. The blue points are
-         mass fraction for the gas inside virial radius and the 
-         red points are gas between virial radius and baryon
-         radius.}
-\label{fig:inout}
-\end{figure*}
 
 
 \section{Baryon budget}
@@ -393,17 +351,16 @@ plus dark matter), so that the  $M_{\rm b}$ is the baryonic mass inside the
 virial radius if the baryons follow the dark matter closely.
 
 Fig.~\ref{fig:budget} shows the ratio between the  mass of each baryon
-component inside the virial radius 
-to the fiducial baryonic mass for the most massive galaxy in
-each zoom-in region. We present the fractions of total stellar mass
-(blue points), and the total baryonic mass
-including stellar mass plus gas mass (green points).
-For the stellar mass fraction we also show the relations from the halo abundance 
-matching \citep{Moster13, Behroozi13, Kravtsov14}.
-The grey area is the one sigma scatter around the mean value 
-from \citet{Kravtsov14}.
+component inside the virial radius  to the fiducial baryonic mass for
+the most massive galaxy in each zoom-in region. We present the
+fractions of total stellar mass (blue points), and the total baryonic
+mass including stellar mass plus gas mass (green points).  For the
+stellar mass fraction we also show the relations from the halo
+abundance  matching \citep{Moster13, Behroozi13, Kravtsov14}.  The
+grey area is the one sigma scatter around the mean value  from
+\citet{Kravtsov14}.
 
-We tried to capture the behaviour of the baryonic mass fraction as a 
+We tried to capture the behavior of the baryonic mass fraction as a 
 function of the halo mass using a double power law formula:
 \begin{equation}
 \frac{f}{f_0} = \left( 
@@ -426,7 +383,7 @@ f_0  &=&   0.336 \nonumber \\
 \gamma  &=&   3.40\nonumber  
 \end{eqnarray}
 The green shaded region indicates the scatter about the best fit line,
-{\bf which are 0.151 for haloes with mass in the range of  
+{\bf which is 0.151 for haloes with mass in the range of  
 $3\times 10^{9}\Msun < M_{200} <2\times 10^{10} \Msun$, 0.236 for
 halo mass in 
 $2\times 10^{10}\Msun < M_{200} < 7\times 10^{10} \Msun$,
@@ -440,16 +397,17 @@ The trends of each component fraction are similar, in that  the
 fractions are relatively low in low mass haloes, and increase as the
 halo mass increases.  The main difference between the different
 components is the slope, with the baryonic mass fraction having a
-shallower slope than the stellar mass fraction.  This is because in low mass haloes
-($\Mhalo\sim 10^{10}\Msun$) most of the baryons are in the form of
-gas, while in the highest mass haloes we study ($\Mhalo\sim
-10^{12}\Msun$) there are roughly equal amounts of stars and gas.
+shallower slope than the stellar mass fraction.  This is because in
+low mass haloes ($\Mhalo\sim 10^{10}\Msun$) most of the baryons are in
+the form of gas, while in the highest mass haloes we study
+($\Mhalo\sim 10^{12}\Msun$) there are roughly equal amounts of stars
+and gas.
 
-Fig.~\ref{fig:budget} shows that all haloes in our study contain
-less than the universal fraction of baryons. The
-upper panel uses a linear y-axis scale, which highlights the large
-amount of baryons that are missing, especially in low mass haloes. The
-logarithmic scale in the lower panel highlights the power-law nature of the relatons.
+Fig.~\ref{fig:budget} shows that all haloes in our study contain less
+than the universal fraction of baryons. The upper panel uses a linear
+y-axis scale, which highlights the large amount of baryons that are
+missing, especially in low mass haloes. The logarithmic scale in the
+lower panel highlights the power-law nature of the relations.
 
 Since the haloes we study are above the mass where the cosmic UV
 background prevents gas from cooling, the missing baryons have most
@@ -461,34 +419,70 @@ outflow, they have expelled a larger fraction of their baryons,
 consistent with expectations from energy driven gas outflows
 \citep[e.g.,][]{Dutton12}.
 
+
+
 \subsection{Mass budget of the corona}
 \label{sec:corona}
 
-{\bf In Fig.~\ref{fig:corona}, we present the radial distribution of 
-gas in different phases normalized to the total baryon mass in
-corresponding radial bins at z=0.
-All simulations share a common attribute.
-The cold gas (T$< 10^4$ K) in corona mostly locates 
-in very center region 
-($R < 0.5 R_{\rm vir}$) where most stars in galaxies form.
-The cool ($10^4$K $<$ T $<$ $10^5$K) and 
-warm-hot ($10^5$K $<$ T $<$ $10^7$K) gas expand to large 
-distance contrastly,
-the fractions keep constant till 2 times $R_{\rm vir}$.
-The hot gas (T$>10^7$K) is minority in corona for 
-all galaxies in NIHAO
-sample, the maximum of the fraction of hot gas is less
-than 5\%.}
+{\bf In Fig.~\ref{fig:corona}, we present the radial distribution of
+  gas in different phases at $z=0$, normalized to the total baryon
+  mass profile, such that for a given halo the four phases add up to
+  unity.  All simulations share a common attribute.  The cold gas (T$<
+  10^4$ K) is mostly located  near the center  ($R < 0.2 R_{200}$)
+  where most stars in galaxies form.  In contrast, the cool ($10^4$K
+  $<$ T $<$ $10^5$K) and  warm-hot ($10^5$K $<$ T $<$ $10^7$K) gas are
+  located at large distances with roughly constant fractions up to 2
+  times $R_{200}$.  The hot gas (T$>10^7$K) is a minority component
+  for all galaxies in the NIHAO sample, with the maximum hot gas
+  fraction at any radius being  less than 5\%.}
 
-{\bf Despite these similarities, we find considerably high proportion
-of cool gas for lower mass galaxies (M$_{\rm tot} < 10^{11} \Msun$)
-in the whole corona region.
-For higher mass galaxies, warm-hot gas dominates the corona 
-which signals higher efficiency  of feedback.
-Even beyond virial radius, the cool and warm-hot gas has
-similar features as the gas within virial radius which reveals
-the gas surrounding galaxies within large distance is the major
-reservior of baryons.}
+{\bf Despite these similarities, we find a considerably higher proportion
+  of cool gas in lower mass galaxies (M$_{\rm tot} < 10^{11} \Msun$)
+  in the whole corona region.  For higher mass galaxies, warm-hot gas
+  dominates the corona  which signals higher efficiency  of feedback.
+  Even beyond the virial radius, the cool and warm-hot gas has similar
+  features as the gas within virial radius which reveals the gas
+  surrounding galaxies within large distance is the major reservoir of
+  baryons.}
+
+%% FIGURE 3
+\begin{figure}
+\centerline{
+  \psfig{figure=ratioprofile_v4.eps,width=0.5\textwidth}
+}
+\caption{Baryon distribution of each galaxy from NIHAO simulations. 
+ The lines are color coded by their halo mass, which shows a
+  clear trend that the more massive haloes preserve more baryons at
+  all radii.}
+\label{fig:rps}
+\end{figure}
+
+
+%% FIGURE 4
+\begin{figure}
+\centerline{
+  \psfig{figure=missing_vr.eps,width=0.5\textwidth}
+}
+\caption{Baryon radius as function of total virial mass.
+         The points are color coded by the ratio 
+         between baryon radius and the virial radius of each galaxy.}
+\label{fig:missvr}
+\end{figure}
+
+%% FIGURE 5
+\begin{figure*}
+\centerline{
+  \psfig{figure=budget_inout.eps,width=0.99\textwidth}
+}
+\caption{Mass fraction of gas in four phases (relative to the fiducial
+  baryonic mass within virial radius). The blue and red points are for
+  gas  inside and outside the virial radius, respectively. Cool gas is
+  the dominant component of the CGM in NIHAO simulations.}
+\label{fig:inout}
+\end{figure*}
+
+
+
 
 
 \subsection{Where are the missing baryons?}
@@ -521,54 +515,53 @@ radius.
 %Finally, the most massive galaxies have an almost constant curve 
 %which are close but still less than 1.
 
-{\bf To find out how far the baryons escape, we measured the baryon 
-radius within which the total baryon mass equals to the fiducial
-baryonic mass defined by Equ.~\ref{equ:mb}.
-Fig.~\ref{fig:missvr} illustrates the baryon radius of each galaxy
-as function of the total mass within virial mass.
-We find the baryon radius increases as the total mass goes higher
-generally.
-In the whole mass range, The baryon radii normalized by 
-corresponding virial radii span a similar range
-which are from larger than virial radius to more than 5 times
-virial radius, except there are three galaxies with baryon
-radii larger than 8 times virial radius. 
-It shows that the normalized distance where the baryons inside
-virial radius can reach is not sensitive to the halo masses.}
+{\bf To estimate how far the baryons escape, we measured the radius,
+  $\Rbar$, within which the total baryon mass equals to the fiducial
+  baryonic mass defined by Eq.~\ref{equ:mb}. This is a lower limit to
+  the true extent of the missing baryons since the baryon mass
+  includes gas and stars that belong to nearby lower mass haloes.
+  Fig.~\ref{fig:missvr} shows the baryon radius of each galaxy as
+  function of the virial mass.  We find the baryon radius generally
+  increases with virial mass. But when normalized by the virial
+  radius, the distance baryons are ejected to span a similar range of radii
+  $\Rbar/R_{200}\sim 2-6$.}
 
-{\bf In Fig.~\ref{fig:inout}, we calculate the fractions of 
-these four kinds of gas inside virial radius and between 
-virial radius and baryon radius. The upper-left panel shows the 
-fractions of cold gas. The fractions of cold gas between
-virial radius and baryon radius of
-galaxies with halo masses in the range between $10^{9} \Msun$ to 
-$10^{10} \Msun$ are greater than 80\%. As the halo mass increase,
-this fractions go down dramatically, in the mass range between
-$10^{10} \Msun$ and $10^{11} \Msun$ the fractions are less than 
-20\% for most of galaxies and the fractions of galaxies with halo
-mass above $10^{11} \Msun$ are almost 0. 
-For the cold gas inside virial radius, the fractions increase
-gradually as halo masses increase and the maximum fraction is
-about 20\% with halo mass at $10^{12} \Msun$.
-The upper-right panel is about the fractions of cool gas. 
-The fractions of cool gas in region outside of virial radius 
-increase from 0 at halo masses are $10^9 \Msun$ to 80\% at halo 
-masses are around $10^{10} \Msun$ to $10^{11} \Msun$, then 
-decrease in higher mass range and reach 0 again at halo masses
-are $10^{12} \Msun$. The cool gas insdie virial radius shares 
-a similar trend but the maximum fraction is about 40\% at 
-halo masses are $10^{11} \Msun$.
-The fractions for warm-hot gas are shown in the lower-left panel,
-the trends of the gas inside and outside gas are quite similar
+{\bf In Fig.~\ref{fig:inout}, we calculate the fractions of gas (in each phase)
+inside the virial radius (blue points) and between 
+the virial and baryon radii (red points).
+%
+The upper-left panel shows the  fractions of cold gas. The fractions
+of cold gas between the virial radius and baryon radius of galaxies with
+halo masses in the range between $10^{9} \Msun$ to  $10^{10} \Msun$
+are greater than 80\%. As the halo mass increases, this fraction goes
+down dramatically, in the mass range between $10^{10} \Msun$ and
+$10^{11} \Msun$ the fractions are less than  20\% for most of galaxies
+and the fractions for galaxies with halo mass above $10^{11} \Msun$ are
+almost 0.  For the cold gas inside the virial radius, the fractions
+increase gradually as halo mass increases and the maximum fraction is
+about 20\% with at a halo mass of $10^{12} \Msun$.
+%
+The upper-right panel shows the fractions of cool gas.  The fractions
+of cool gas in region outside of virial radius  increase from 0 at
+halo masses are $10^9 \Msun$ to 80\% at halo  masses are around
+$10^{10} \Msun$ to $10^{11} \Msun$, then  decrease in higher mass
+range and reach 0 again at halo masses are $10^{12} \Msun$. The cool
+gas inside virial radius shares  a similar trend but the maximum
+fraction is about 40\% at  halo masses are $10^{11} \Msun$.
+%
+The fractions for warm-hot gas are shown in the lower-left panel.
+The trends of the gas inside and outside gas are quite similar
 which increase as the halo masses increase monotonically and whose 
 maximum values are only 20\%.
-The hot gas shown in the lower-right panel is absolutely minority,
-the fraction of gas inside baryon radius is almost 0 in the 
-whole halo mass range.
-We thus conclude that, for the galaxies with halo mass 
+%
+The hot gas shown in the lower-right panel and is negligible both
+inside and outside the virial radius across the whole mass range we
+study.
+%
+We thus conclude that, for galaxies with halo mass 
 below $10^{11}$, the majority of baryons associated with the
-halo mass within virial radius are in the cold and cool phases, 
-meanwhile are well outside of virial radius, for the gas inside
+dark matter halo are in the cold and cool phases, 
+and are located well outside of virial radius. For the gas inside
 virial radius, the majority is cool gas for the galaxies with
 halo masses are $10^{11} \Msun$ and when halo masses are higher
 than $10^{11} \Msun$ the fractions of cold gas, cool gas and 
@@ -579,11 +572,11 @@ warm-hot gas are comparable.}
 \centerline{
   \psfig{figure=budget.eps,width=0.5\textwidth}
 }
-\caption{Baryonic budget (the fraction of different components) 
-  of $3.5\times 10^{11} < M_{200}/\Msun <
-  3.5 \times 10^{12}$ NIHAO galaxies (blue points 
+\caption{Baryonic budget 
+  of NIHAO haloes of mass $3.5\times 10^{11} < M_{200}/\Msun <
+  3.5 \times 10^{12}$ (blue points 
   with 1$\sigma$ error bars) compared with observations of 
-  M$_{200}$ = 10$^{12.2}$ $\Msun$ galaxies (shaded regions)
+  $M_{200} \sim 10^{12}\Msun$ haloes (shaded regions)
   }
 \label{fig:comparison}
 \end{figure}
@@ -592,8 +585,8 @@ warm-hot gas are comparable.}
 
 %% TABLE 1
 \begin{table*}
-\caption{The baryonic budget parameters for galaxies in NIHAO sample
-  in different mass bins. We refer to gas in the temperature range  T
+  \caption{The baryonic budget parameters for NIHAO galaxies
+    in different halo  mass bins. We refer to gas in the temperature range  T
   $<$ $10^4$ K as cold; $10^4$ K $\leqslant$ T $<$ $10^5$ K as cool;
   $10^5$ K $\leqslant$ T $<$ $10^7$ K as warm;  and T $\geqslant$
   $10^7$ K as hot.}
@@ -603,7 +596,7 @@ warm-hot gas are comparable.}
 \input{budgettable4.txt}
 \hline
 \end{tabular}
-\label{tab:comperison}
+\label{tab:comparison}
 \end{center}
 \end{table*}
 
@@ -611,17 +604,16 @@ warm-hot gas are comparable.}
 
 \subsection{Comparison with Observations of Milky Way mass haloes}
 Since the CGM is too diffuse to create emission lines, it must be
-observed using quasar absorption lines.
-The COS-HALOs survey is filling in details about the $z \sim 0$
-CGM \citep{Peeples14, Tumlinson11, Tumlinson13, Werk12, Werk13, Werk14}.
-For the CGM of low-redshift $L^*$ galaxies, \citet{Tumlinson13} and 
-\citet{Peeples14} constrain the mass of  the
-warm-hot CGM ($T \sim 10^{5-7}$), \citet{Werk14} provides a strict
-lower limit to the mass of cool material ($T \sim 10^{4-5}$) in the
-CGM of these galaxies.  In a study using X-rays, 
-\citet{Anderson13} place a
-constraints on the mass of  hot gas ($T > 10^7$) residing in the
-extended hot halos.  
+observed using quasar absorption lines.  The COS-HALOs survey is
+filling in details about the $z \sim 0$ CGM \citep{Peeples14,
+  Tumlinson11, Tumlinson13, Werk12, Werk13, Werk14}.  For the CGM of
+low-redshift $\sim L^*$ galaxies ($\Mstar\sim 10^{10.5}\Msun$),
+\citet{Tumlinson13} and \citet{Peeples14} constrain the mass of  the
+warm-hot CGM ($T \sim 10^{5-7}$K), \citet{Werk14} provides a strict
+lower limit to the mass of cool material ($T \sim 10^{4-5}$K) in the
+CGM of these galaxies.  In a study using X-rays,  \citet{Anderson13}
+place a constraints on the mass of  hot gas ($T > 10^7$K) residing in
+the extended hot halos.  
 
 In Fig.~\ref{fig:comparison}, we show the mean values and standard deviation
 of the mass fraction of stars and different components of gas in our
@@ -633,35 +625,33 @@ warm gas ($10^5$ K $<$ T $< 10^7$ K) and hot gas (T $> 10^7$ K).
 The observational constraints are shown with the same colour scheme
 in Fig. 11 in \citet{Werk14}.
 
-In this plot \citet{Werk14} provides observational constraints for 
-CGM gas mass that are shown as the shaded bars.
-The stellar  mass range comes from
-halo abundance matching as described in \citet{Kravtsov14}.  
-The cold disk gas mass comes from from \citet{Dutton11}.  
+In this plot \citet{Werk14} provides observational constraints for
+CGM gas mass that are shown as the shaded bars.  The stellar  mass
+range comes from halo abundance matching as described in
+\citet{Kravtsov14}.   The cold disk gas mass comes from from
+\citet{Dutton11}.  
 
-The observations and the simulations match well in every phase
-outside of the cool CGM gas, where the observations find $3\times$
-the mass that simulations predict.  If the observations are correct,
-the simulations have either ejected too far gas that could be cool, or 
-they have created a CGM with the wrong mix of gas temperatures. The
-total gas fractions (0.39 in COS-HALOs, 0.41 in NIHAO) suggest the
-latter option.  
-{\bf However, \citet{Stern16} developed a new method to constrain the
-physical condtions in the cool CGM from measurements of ionic 
-columns denisities. This new method combined the information
-available from different during the photoionization modeling,
-and was applied to the COS-HALOs data, 
-yielding a total cool CGM mass within the virial radius
-of $1.3\times10^{10}\Msun$ which is shown by the green hashed
-bar in Fig~\ref{fig:budget} and have good agreement with
-our prediction.
-As the Fig.~\ref{fig:corona} and Fig.~\ref{fig:inout} show, the
-cool gas is the most important component in CGM so that
-the more correct knowledge about physical properties of CGM are
-necessary to understand the role the CGM on galaxy formation
-better.}
-As the CGM of lower mass galaxies will soon be observed ,
-Table~\ref{tab:comperison} lists information about CGM
+The observations and the simulations match well in every phase {\bf
+  except} the cool CGM gas, where the observations find $3\times$ the
+mass that simulations predict.  If the observations are correct, the
+simulations have either ejected {\bf cool gas too far}, or  they have
+created a CGM with the wrong mix of gas temperatures. The total gas
+fractions (0.39 in COS-HALOs, 0.41 in NIHAO) suggest the latter
+option.   {\bf However, \citet{Stern16} developed a new method to
+  constrain the physical conditions in the cool CGM from measurements
+  of ionic  columns densities. This new method combines the
+  information available from different ??? during the photoionization
+  modeling, and was applied to the COS-HALOs data,  yielding a total
+  cool CGM mass within the virial radius of $1.3\times10^{10}\Msun$
+  which is shown by the green hashed bar in Fig~\ref{fig:budget} and
+  is in good agreement with our prediction.  As the
+  Fig.~\ref{fig:corona} and Fig.~\ref{fig:inout} show, the cool gas is
+  the most important component in CGM so that the more accurate
+  knowledge of the physical properties of CGM are necessary to better
+  understand the role of the CGM in galaxy formation.}
+%
+As the CGM of lower mass galaxies will soon be observed,
+Table~\ref{tab:comparison} lists information about CGM
 mass fractions of the different components of gas in haloes down to a
 halo mass of $\sim 10^{10}\Msun$.
 
@@ -684,41 +674,32 @@ We summarize our results as follows:
 
 \begin{itemize}
 \item All of the NIHAO haloes have a lower baryon to dark matter ratio, 
-      inside the viriral radius, than the cosmic baryon fraction. 
+      inside the virial radius, than the cosmic baryon fraction. 
 
-\item {\bf Cold gas in most of galaxies (except several low mass
-      galaxies with low SFR) locates within 0.5 times virial 
-      radius. The cool gas dominates the corona at low mass range
-      end and the fraction of warm-hot gas increase with 
-      the increasing of halo mass and become majority at high
-      mass end.}
+\item {\bf Cold gas ($T<10^4$K) is mostly restricted to be within
+      0.2 virial radii.  The cool gas ($10^4 < T < 10^5$K) dominates
+      the corona at low masses ($M_{200}\lta 3\times 10^{11} \Msun$)
+      while the warm-hot gas ($10^5 < T < 10^7$K) dominates at high
+      masses ($M_{200}\gta 3\times 10^{11} \Msun$).}
 
 \item The missing baryons in all haloes are beyond 2 virial radii.
 
-\item {\bf Cool gas is major component in total baryons 
-      whose mass is same as the fiducial baryonic mass of 
-      total dark matter mass inside virial radius. Most of the
-      cool gas in these baryons locates out of the virial radius.}
+\item {\bf ??? I don't understand this sentence ?? Cool gas is a major
+  component in total baryons  whose mass is same as the fiducial
+  baryonic mass of  total dark matter mass inside virial radius. Most
+  of the cool gas in these baryons locates out of the virial radius.}
 
 \item Lower mass haloes have lost a larger fraction of their baryons, 
       even though they convert a lower fraction of the baryons into stars.
 
-\item For the highest mass haloes in our study $\sim 10^{12}\Msun$ 
-      our simulations are consistent with the observed 
-      fractions of stars, 
+\item For the highest mass haloes in our study $\sim 10^{12}\Msun$ our
+      simulations are consistent with the observed  fractions of stars,
       cold gas, warm and hot gas.
 
-\item We underpredict 
-      the cool ($10^4 < T < 10^5 K$) gas 
-      with $f_{\rm cool}=0.11\pm0.06$ 
-      vs 0.28-0.48 observed of COS-HALOs.
-      {\bf \citet{Stern16} employed new method which have
-      a tight constraint on CGM properties shows a 
-      similar result as we predict.
-      To solve this discrepancy may be helpful to answer
-      if current feedback model pushes the 
-      gas too far, or puts gas in the wrong phases, 
-      and can be resolved with future observations.}
+\item {\bf For the cool gas we predict $f_{\rm cool}=0.11\pm0.06$
+      which is significantly lower than the observations from COS-HALOs
+      ($f_{\rm cool}=0.28-0.48$), but is in excellent agreement with the
+      analysis of \citet{Stern16}.}
 
 \end{itemize}
 
@@ -727,6 +708,7 @@ We summarize our results as follows:
 
 {\sc Gasoline} was written by Tom Quinn and James Wadsley. Without
 their contribution, this paper would have been impossible.
+%
 The simulations were performed on the {\sc theo} cluster of the
 Max-Planck-Institut f\"ur Astronomie and the {\sc hydra} cluster at
 the Rechenzentrum in Garching; and the Milky Way supercomputer, funded
@@ -734,7 +716,9 @@ by the Deutsche Forschungsgemeinschaft (DFG) through Collaborative
 Research Center (SFB 881) "The Milky Way System" (subproject Z2),
 hosted and co-funded by the J\"ulich Supercomputing Center (JSC). We
 greatly appreciate the contributions of all these computing
-allocations.  AAD, GSS and AVM acknowledge support through the
+allocations.
+%
+AAD, GSS and AVM acknowledge support through the
 Sonderforschungsbereich SFB 881 “The Milky Way System” (subproject A1)
 of the German Research Foundation (DFG).  The analysis made use of the
 pynbody package \citep{Pontzen13}.
@@ -742,11 +726,13 @@ pynbody package \citep{Pontzen13}.
 The authors acknowledge support from the MPG-CAS through the
 partnership programme between the MPIA group lead by AVM and the PMO
 group lead by XK.
-LW acknowledges support of the MPG-CAS student
-programme.
-XK acknowledge the support from 973 program (No. 2015CB857003, 2013CB834900),
-NSFC project No.11333008 and the ``Strategic Priority Research Program the Emergence
-of Cosmological Structures'' of the CAS(No.XD09010000).
+%
+LW acknowledges support of the MPG-CAS student programme.
+%
+XK acknowledge the support from 973 program (No. 2015CB857003,
+2013CB834900), NSFC project No.11333008 and the ``Strategic Priority
+Research Program the Emergence of Cosmological Structures'' of the
+CAS(No.XD09010000).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -773,10 +759,6 @@ of Cosmological Structures'' of the CAS(No.XD09010000).
 %A First Estimate of the Baryonic Mass Function of Galaxies
 \bibitem[Bell et al.(2003)]{Bell03} Bell, E.~F., McIntosh, D.~H., Katz, N., Weinberg, M.~D.,\ 2003, \apj, 585, 117
 
-% Multiscale Gaussian Random Fields and Their Application to Cosmological Simulations
-%\bibitem[Bertschinger(2001)]{Bertschinger01} Bertschinger, E.\ 2001, 
-%\apjs, 137, 1 
-
 % The Search for the Missing Baryons at Low Redshift
 \bibitem[Bregman (2007)]{Bregman07}
 Bregman, J.~N.\ 2007, ARAA, 45, 221
@@ -788,11 +770,10 @@ Bregman, J.~N.\ 2007, ARAA, 45, 221
 Cen, R.~Y., Ostriker, J.~P.\ 1999, \apj, 514, 1
 
 
-
 %% DDDDDDDD
 
 % Missing Halo Baryons and Galactic Outflows
-\bibitem[Dave{\'e} (2009)]{Dave09} Dav{\'e}, R.\ 2009, ASPC, 419, 347D
+\bibitem[Dav{\'e} (2009)]{Dave09} Dav{\'e}, R.\ 2009, ASPC, 419, 347D
 
 % The intergalactic medium over the last 10 billion years - I. Lya absorption and physical conditions
 \bibitem[Dav{\'e} et al.(2010)]{Dave10} Dav{\'e}, R., Oppenheimer, B.~D., Katz, N., et al.\ 2010, \mnras, 408, 2051
@@ -819,8 +800,6 @@ Cen, R.~Y., Ostriker, J.~P.\ 1999, \apj, 514, 1
 \bibitem[Fukugita et al.(1998)]{Fukugita98} Fukugita, M., Hogan, C.~J., Peebles, P.~J.~F.\ 1998, \apj, 503, 518
 
 %% GGGGGGGGG
-
-
 
 
 %% HHHHHHHHH
@@ -867,12 +846,7 @@ Schombert, J.~M., de Blok, W.~J.~G., Zagursky, M.~J.\ 2010, \mnras,
 \& White, S.~D.~M.\ 2013, \mnras, 428, 3121 
 
 
-
-
-
 %% NNNNNNNNN
-
-
 
 
 %% OOOOOOOO
@@ -888,10 +862,6 @@ Schombert, J.~M., de Blok, W.~J.~G., Zagursky, M.~J.\ 2010, \mnras,
 % A Budget and Accounting of Metals at z ~ 0: Results from the COS-Halos Survey
 \bibitem[Peeples et al.(2014)]{Peeples14} Peeples, M.~S., Werk, J.~K., Tumlinson, J., et al.\ 2014, \apj, 786, 54
 
-% Dark MaGICC: the effect of dark energy on disc galaxy formation. Cosmology does matter
-%\bibitem[Penzo et al.(2014)]{Penzo14} Penzo, C., Macci{\`o}, 
-%  A.~V., Casarini, L., Stinson, G.~S., \& Wadsley, J.\ 2014, \mnras, 442, 176
-
 % The baryon content of the universe
 \bibitem[Persic \& Salucci(1992)]{Persic92} Persic, M., Salucci, P.\ 1992, \mnras, 258, 14
 
@@ -901,11 +871,6 @@ Schombert, J.~M., de Blok, W.~J.~G., Zagursky, M.~J.\ 2010, \mnras,
 
 %% RRRRRRRRRRR
 
-%Evolution of the Mass-Metallicity Relations in Passive and Star-forming Galaxies from SPH-cosmological Simulations
-  
-%Multiphase smoothed-particle hydrodynamics
-%\bibitem[Ritchie \& Thomas(2001)]{Ritchie01} Ritchie, B.~W.,
-%  \& Thomas, P.~A.\ 2001, \mnras, 323, 743
 
 %% SSSSSSSSSSSS
 
@@ -933,6 +898,8 @@ Stern, J., Hennawi, J.~F., Prochaska, J.~X., Werk, J.~K.\ 2016, arXiv:1604.02168
 \bibitem[Stinson et al.(2013)]{Stinson13} Stinson, G.~S., Brook, 
 C., Macci{\`o}, A.~V., et al.\ 2013, \mnras, 428, 129 
 
+% NIHAO III: the constant disc gas mass conspiracy
+\bibitem[Stinson et al.(2015)]{Stinson15} Stinson, G.~S., Dutton, A.~A., Wang, L., et al.\ 2015, \mnras, 454, 1105 
 
 
 %% TTTTTTTTTTT
