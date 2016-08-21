@@ -239,6 +239,14 @@ comparing results at $z=3$ and $z=0$, they showed that large
 haloes remove their baryons at early times while small haloes lose
 baryons more recently due to the wind material taking longer to
 return to low-mass galaxies than high-mass galaxies.
+{\bf \citet{Muratov15} showed similar results that the gas and
+baryon fractions are lower at lower redshift, after powerful
+outflows at intermediate redshift z $\approx 0.5-2$ remove a large
+amount of gas from the halo. \citet{Voort16} found baryon fraction
+and gas fraction are reduced compared to the cosmic mean baryon
+fraction, and low mass haloes reduce larger since feedback can
+easily expel gas from it, which is consistent with existing 
+observation.}
 %  
 \citet{Sokolowska16} studied the halo gas of three Milky way-sized
 galaxies using cosmological zoom-in simulations. They found that
@@ -301,7 +309,9 @@ with baryons have been extracted from 3 different pure N-body
 simulations with a box size of 60, 20 and 15 $h^{-1}$ Mpc
 respectively.  We adopted the  latest compilation of cosmological
 parameters from the Planck  satellite \citep{Planck14}. 
-More information on the collisionless parent simulations and
+More information on the collisionless parent simulations,
+{\bf the force softenings and particle masses for the highest 
+refinement level for each simulation} and
 sample  selection can be found in \citet{Dutton14} and \citet{Wang15}
 
 We use the SPH hydrodynamics code {\sc gasoline} \citep{Wadsley04},
@@ -310,8 +320,22 @@ with a revised treatment of  hydrodynamics as described in
 mixing of metal and energy \citep{Wadsley08}, heating and cooling
 include photoelectric heating of dust grains, ultraviolet (UV) heating
 and ionization and  cooling due to hydrogen, helium and metals
-\citep{Shen10}.  The star formation and feedback modeling follows what
-was used in the MaGICC simulations \citep{Stinson13}.  There are two
+\citep{Shen10}.  
+
+khe star formation and feedback modeling follows what
+was used in the MaGICC simulations \citep{Stinson13}.  
+{\bf The gas converts into stars according to the Kennicutt-Schmidt Law
+when it satisfies a temperature and density threshold. Stars feed both
+metals and energy back into the ISM gas surrounding the region where
+they formed. SN feedback is implemented using the blastwave formalism
+described in \citet{Stinson06}. Pre-SN feedback is an effort to consider
+radiation energy from massive stars which is am important complementary
+to physcial model for stellar feedback. Heating is introduced immediately
+after massive stars form based on how much star light is radiated. 
+Our simulations use thermal feedback to provide pressure support and 
+increase gas temperature above the star formation threshold to
+decrease star formation.}
+There are two
 small changes in NIHAO simulations: The change in  number of neighbors
 and the new combination of softening length and  particle mass increases
 the threshold for star formation from  9.3 to 10.3
@@ -351,6 +375,17 @@ feedback modeling can be found in \citet{Wang15}.
 \end{figure}
 
 %% FIGURE 2
+\begin{figure}
+\centerline{
+  \psfig{figure=m500c_frac.eps,width=0.48\textwidth}
+}
+\caption{{\bf Baryon fraction within R$_{500}$ comparing with \citet{Voort16}.
+   The blue points are from NIHAO simulations and the red pentagons are from
+   FIRE simulations.}}
+\label{fig:fire_com}
+\end{figure}
+
+%% FIGURE 3
 \begin{figure}
 \centerline{
   \psfig{figure=budget_res.eps,width=0.48\textwidth}
@@ -399,6 +434,15 @@ low mass haloes ($\Mhalo\sim 10^{10}\Msun$) most of the baryons are in
 the form of gas, while in the highest mass haloes we study
 ($\Mhalo\sim 10^{12}\Msun$) there are roughly equal amounts of stars
 and gas.
+{\bf To compare with baryon fraction in \citet{Voort16}, we derive
+the M$_{500}$ and R$_{500}$ to recalculate the ratio between 
+baryon fraction to the universal fraction of baryons. The baryon
+fraction have good agreement with each other in the whole mass range
+where NIHAO simulations explored. For the massive haloes with 
+M$_{500} > 10^{12} \Msun$, there are two galaxies from NIHAO have
+reduced baryon fraction and four more massive galaxies from FIRE
+have larger reduced baryon fraction which may hint that the baryon
+fraction will decrease as the halo mass increases in large mass range.}
 
 Since most of the haloes we study are above the mass where the cosmic UV
 background prevents gas from cooling, the missing baryons have most
@@ -938,6 +982,8 @@ Schombert, J.~M., de Blok, W.~J.~G., Zagursky, M.~J.\ 2010, \mnras,
 \bibitem[Moster et al.(2013)]{Moster13} Moster, B.~P., Naab, T., 
 \& White, S.~D.~M.\ 2013, \mnras, 428, 3121 
 
+% Gusty, gaseous flows of FIRE: galactic winds in cosmological simulations with explicit stellar feedback
+\bibitem[Muratov et al.(2015)]{Muratov15} Muratov, A.~L., Ker{\v e}s, D., Faucher-Gigu{\`e}re, C., et al.\ 2015, \mnras, 454, 2691
 
 %% NNNNNNNNN
 
@@ -998,6 +1044,9 @@ Sokolowska, A., Mayer, L., Babul, A., Madau, P., Shen, S.\ 2016, \apj, 819, 21
 \bibitem[Stern et al.(2016)]{Stern16} 
 Stern, J., Hennawi, J.~F., Prochaska, J.~X., Werk, J.~K.\ 2016, arXiv:1604.02168
 
+% Star formation and feedback in smoothed particle hydrodynamic simulations - I. Isolated galaxies
+\bibitem[Stinson et al.(2006)]{Stinson06} Stinson, G.~S., Seth, A., Katz, N., et al.\ 2006, \mnras, 373, 1074
+
 %
 \bibitem[Stinson et al.(2012)]{Stinson12} Stinson, G.~S., Brook, C., Prochaska, J.~X., et al.\ 2012, \mnras, 425, 129
 
@@ -1028,6 +1077,10 @@ Thom, C., Tumlinson, J., Werk, J.~K.\ 2012, \apjl, 758, L41
 
 % Properties of gas in and around galaxy haloes
 \bibitem[van de Voort \& Schaye (2012)]{Voort12} van de Voort, F., Schaye, J.\ 2012, \mnras, 423, 2991
+
+%The impact of stellar feedback on hot gas in galaxy haloes:
+%the Sunyaev-Zeldovich effect and soft X-ray emission 
+\bibitem[van de Voort et al.(2016)]{Voort16} van de Voort, F., Quataert, E., Hopkins, P.~F., et al.\ 2016, arXiv:1604.01397
 
 %	Introducing the Illustris Project: simulating the coevolution
 % of dark and visible matter in the Universe
