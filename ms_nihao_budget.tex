@@ -213,7 +213,8 @@ of the baryon budget. In the future such observations will be extended
 to a wider range of halo masses.  A number of large volume
 cosmological simulations \citep{Ford13, Ford15, Suresh15b,
   Oppenheimer16} and zoom-in cosmological simulations
-\citep{Stinson12, Hummels13, Shull14} have given predictions for the
+\citep{Stinson12, Hummels13, Shull14} have given 
+predictions for the
 \hi{} and \ovi{} absorption line. \citet{Gutcke16} compared the
 column density profile of \ovi{} and \hi{} in the CGM of galaxies
 from the NIHAO \citep{Wang15} cosmological hydrodynamical
@@ -434,7 +435,16 @@ low mass haloes ($\Mhalo\sim 10^{10}\Msun$) most of the baryons are in
 the form of gas, while in the highest mass haloes we study
 ($\Mhalo\sim 10^{12}\Msun$) {\bf a substantial amounts of gas
 forms stars}.
-{\bf To compare with baryon fraction in \citet{Voort16}, we derive
+
+{\bf \citet{Christensen16} run twenty galaxy simulations spanning the mass range
+from $10^{9.5} - 10^{12} \Msun$ using zoom-in cosmological hydrodynamic 
+simulation code and didn't only reproduce the stellar mass - halo mass
+relation but also showed a similar baryon fraction relation, e.g. in 
+L$^*$ galaxies, the fraction is reduced by 20\% while in galaxies with
+halo mass $< 10^{10} \Msun$ there can be as large as an 80\% mass reduction.
+This suggests that the potential well of the halo regulates the baryon
+fraction.
+To compare with baryon fraction in \citet{Voort16}, we derive
 the M$_{500}$ and R$_{500}$ to recalculate the ratio between 
 baryon fraction to the universal fraction of baryons. The baryon
 fraction have good agreement with each other in the whole mass range
@@ -586,6 +596,27 @@ little change in the baryon fraction up to 2 virial radii.  We thus
 conclude that the missing baryons are well outside of the virial
 radius.
 
+{\bf Two cosmological hydrodynamic simulations in \citet{Ford15} 
+which employed two prescriptions for galactic 
+outflow models to compare with COS-Halos showed this cumulative
+baryon fraction profile for COS-Halos matched sample of galaxies.
+One hybrid energy/momentum driven winds model ("ezw" model) makes up to
+65\% of all baryons inside the halo. This is broadly consistent with
+estimates of baryonic mass derived from \citet{Werk14} and our 
+finding in Fig.~\ref{fig:budget}. Comparing the cumulative baryon
+fraction profile in detail, Fig.10 in \citet{Ford15} shows the baryon
+fraction within 0.1$\Rvir$ is only $\sim 30\%$ and the fraction 
+gradually increases to 65\% at $\Rvir$ while the profile of galaxies
+with halo mass below $10^{11} \Msun$ in Fig.~\ref{fig:rps} have 
+similar feature, the more massive galaxies all have roughly flat slopes.
+The simplified outflow model (constant wind model or "cw" model) shows
+lower fraction at all radii inside $\Rvir$ even though "ezw" model
+and "cw" model generally gives similar observational absorption 
+line properties. This suggests that the profile of cumulative baryon
+fraction, as a complementary of total amount observation of CGM,
+ is important to distinguish between competing outflow models
+that often closely relate to the feedback models.
+}
 %% FIGURE 3
 \begin{figure}
 \centerline{
@@ -680,13 +711,15 @@ gas, cool gas and  warm-hot gas are comparable.
 
 
 
-\subsection{Comparison with Observations of Milky Way mass haloes}
+\subsection{Comparison with observations
+of Milky Way mass haloes}
+
 {\bf Observations can gain information of CGM from absorption lines
 and emission lines. Although emission lines allow us to direct obtain
 a 3D picture of the distribution of gas in the CGM, emission line studies
 preferentially probe the dense gas closer to galaxies since gas 
 emissivity scales with the square of density. The situation is changing
-by building current facilities, e.g.\citet{Hayes16}, absorption line,
+by building current facilities, e.g.~\citet{Hayes16}, absorption line,
 however, is the most common observational constraints on the physical
 state of the CGM.}
 The COS-HALOs survey is
@@ -770,7 +803,21 @@ is in good agreement with our prediction.  As the
 Fig.~\ref{fig:corona} and Fig.~\ref{fig:inout} show, the cool gas is
 the most important component {\bf for most galaxies in NIHAO simulation
 ($10^{10} < M/\Msun < 10^{12}$), the cold and hot gas only dominate for
-galaxies at lower and higher mass end in NIHAO suite.} The more accurate
+galaxies at lower and higher mass end in NIHAO suite.} 
+{\bf A new estimation for the baryonic fractions from a set of
+eight Milky Way-sized zoom-in cosmological simulations 
+\citep{Colin16} is genenrally consistence with our results. The 
+fraction of cool gas from their simulation is even lower 
+($f_{\rm cool}$ = 0.034) than ours and the result from 
+\citet{Stern16}. On the other hand, \citet{Peeples14} gave 
+a conservative observational estimate about warm-hot gas and
+showed that the fraction of gas in this phase is only 5\%, 
+which is the lower limit of the estimates from \citet{Werk14} 
+and less than the average values from \citet{Colin16} 
+($f_{\rm warm-hot} \approx 24\%$) and our finding 
+($f_{\rm warm-hot} \approx 17\%$). Therefore, the mix temperature
+of CGM have large uncertainty and}
+the more accurate
 knowledge of the physical properties of CGM are necessary to better
 understand the role of the CGM in galaxy formation.
 %
@@ -778,7 +825,6 @@ As the CGM of lower mass galaxies will soon be observed,
 Table~\ref{tab:comparison} lists information about CGM
 mass fractions of the different components of gas in haloes down to a
 halo mass of $\sim 10^{10}\Msun$.
-
 
 
 
@@ -896,6 +942,13 @@ Bregman, J.~N.\ 2007, ARAA, 45, 221
 \bibitem[Cen \& Ostriker (1999)]{Cen09} 
 Cen, R.~Y., Ostriker, J.~P.\ 1999, \apj, 514, 1
 
+%In-N-Out: The Gas Cycle from Dwarfs to Spiral Galaxies
+\bibitem[Christensen et al.(2016)]{Christensen16}
+Christensen, C.~R., Dav{\'e}, R., Governato, F., et al.\ 2016, \apj, 824, 57
+
+%Cosmological simulations of Milky Way-sized galaxies
+\bibitem[Colin et al.(2016)]{Colin16}
+Colin, P., Avila-Reese, V., Roca-Fabrega, S., et al.\ 2016, \apj, in press
 
 %% DDDDDDDD
 
@@ -927,7 +980,7 @@ Cen, R.~Y., Ostriker, J.~P.\ 1999, \apj, 514, 1
 \bibitem[Ford et al.(2013)]{Ford13} Ford, A.~B., Oppenheimer, B.~D., Dav{\`e}, R., et al.\ 2013, \mnras, 432, 89
 
 %
-\bibitem[Ford et al.(2015)]{Ford15} Ford, A.~B., Werk, J.~W., Dav{\`e}, R., et al.\ 2015, arXiv:1503.02084
+\bibitem[Ford et al.(2015)]{Ford15} Ford, A.~B., Werk, J.~W., Dav{\`e}, R., et al.\ 2016, \mnras, 459, 1745
 
 % The Cosmic Baryon Budget
 \bibitem[Fukugita et al.(1998)]{Fukugita98} Fukugita, M., Hogan, C.~J., Peebles, P.~J.~F.\ 1998, \apj, 503, 518
