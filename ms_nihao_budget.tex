@@ -1,6 +1,8 @@
 \documentclass[useAMS,usenatbib]{mn2e}
 \input psfig.sty
 \usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
 %\usepackage{graphicx}
 %\usepackage{epstopdf}
 
@@ -501,7 +503,14 @@ As might be expected, haloes with the highest masses we study have
 high baryon fractions with relatively  small scatter. As halo mass
 decreases, the baryon fraction decreases and the scatter increases,
 consistent with expectations from outflows driven by stellar
-feedback. At the lowest halo masses we study, below $10^{10}\Msun$,
+feedback {\bf since the energy-driven wind model determined that
+mass loading factors show a power-law dependency on circular velocity
+, with an exponent of $\approx -2$, \eg \citet{Christensen16}, 
+which means the greater efficiency of small galaxies at 
+driving outflows is simply a result of their shallower potential 
+well and the increasing scatters come from the increasing scatters of
+stellar mass halo mass relation in lower mass range.}
+At the lowest halo masses we study, below $10^{10}\Msun$,
 the scatter starts to decrease. By contrast the scatter in the stellar
 mass fraction increases below this scale. Thus it seems unlikely that
 stellar feedback is primarily responsible for the low baryon
@@ -845,6 +854,15 @@ We summarize our results as follows:
 \begin{itemize}
 \item All of the NIHAO haloes have a lower baryon to dark matter ratio, 
       inside the virial radius, than the cosmic baryon fraction. 
+      {\bf Higher fractions of baryons are lost as the virial mass 
+      decreases in the mass range of $\lesssim 10^{12} \Msun$.
+      The trend confirmed with \citet{Christensen16} and \citet{Voort16},
+      and associated by \citet{Voort16}, the trend at higher mass range
+      may suggest the baryon fraction is reduced larger as virial mass
+      increase. }
+
+\item Lower mass haloes have lost a larger fraction of their baryons, 
+      even though they convert a lower fraction of the baryons into stars.
 
 \item Cold gas ($T<10^4$K) is mostly restricted to be within
       0.2 virial radii.  The cool gas ($10^4 < T < 10^5$K) dominates
@@ -852,7 +870,11 @@ We summarize our results as follows:
       while the warm-hot gas ($10^5 < T < 10^7$K) dominates at high
       masses ($M_{200}\gta 3\times 10^{11} \Msun$).
 
-\item The missing baryons from all haloes are located beyond 2 virial radii.
+\item {\bf All haloes have less baryons than baryon mass derived by cosmic
+       baryonic fraction even beyond 2 virial radii. The total 
+       baryons derived by cosmic baryonic fraction within virial radius 
+       can expand more than $8\Rvir$ for low mass haloes but less than
+       $2\Rvir$ for high mass haloes.} 
 
 \item Cool gas is a major component of the total baryons within
       R$_{\rm bar}$ {\bf for galaxies at mass range between $10^{10} \Msun$ 
@@ -860,25 +882,30 @@ We summarize our results as follows:
       at lower and higher mass end. Most of baryons are} outside of the 
       virial radius.
 
-\item Lower mass haloes have lost a larger fraction of their baryons, 
-      even though they convert a lower fraction of the baryons into stars.
-
 \item For the highest mass haloes in our study $\sim 10^{12}\Msun$ our
       simulations are consistent with the observed  fractions of stars,
-      cold gas, warm and hot gas.
+      cold gas, warm and hot gas \citep{Werk14}. {\bf \citet{Peeples14} 
+      showed a conservative observational estimate for warm-hot gas 
+      which is lower limit of the result from \citet{Werk14} and the 
+      warm-hot fraction from our study is well within the range of less
+      conservative estimates.}
 
 \item For the cool gas we predict $f_{\rm cool}=0.11\pm0.06$
       which is significantly lower than the observations from COS-HALOs
       ($f_{\rm cool}=0.28-0.48$), but is in excellent agreement with the
       analysis of \citet{Stern16}.
+      {\bf As in \citet{Colin16}, the simulations suggest that the
+      fraction of cool gas is approximately 10\%.} 
 
 \end{itemize}
 
 
 \section*{Acknowledgments} 
 
-We thank the anonymous referee whose suggestions greatly 
+We thank the two anonymous referees whose suggestions greatly 
 improve the paper.
+{\bf We thank Freeke van de Voort for kindly sharing data of the FIRE
+simulation.}
 {\sc Gasoline} was written by Tom Quinn and James Wadsley. Without
 their contribution, this paper would have been impossible.
 %
