@@ -139,7 +139,7 @@ $^3$Max-Planck-Institut f\"ur Astronomie, K\"onigstuhl 17, 69117 Heidelberg, Ger
   mass and cold gas vs stellar mass relations. Thus they make
   plausible predictions for the baryon budget.  We present the mass
   fractions of stars, cold gas ($T<10^4$K), cool gas ($10^4 < T <
-  10^5$K), warm-hot gas ($10^5 < T < 10^7$K), and hot gas (T$> 10^7$K)
+  10^5$K), warm-hot gas ($10^5 < T < 5\times10^6$K), and hot gas (T$> 5\times10^6$K)
   , inside the virial radius, $R_{200}$.  Compared to the predicted
   baryon mass, using the dark halo mass and the universal baryon
   fraction, $f_{\rm b}\equiv \Omega_{\rm b}/\Omega_{\rm m}=0.15$, we
@@ -210,7 +210,7 @@ the detection is dominated by metal lines, e.g. \ovi{}.  Recent
 advances in the detection of gas in the CGM have come  from the COS
 survey \citep{Tumlinson11, Tumlinson13, Thom12,  Werk12, Werk13}.  On
 the scale of Milky Way mass haloes $\Mhalo \sim 10^{12}\Msun$ a
-significant amount of warm ($10^4 < T < 10^7$K) gas has been detected
+significant amount of warm ($10^4 < T <5\times 10^6$K) gas has been detected
 \citep{Werk14}, accounting for 33-88\% of the baryon budget. In the
 future such observations will be extended to a wider range of halo
 masses.  A number of large volume cosmological simulations
@@ -368,6 +368,17 @@ feedback modeling can be found in \citet{Wang15}.
 %% FIGURE 2
 \begin{figure*}
 \centerline{
+  \psfig{figure=budget_res.eps,width=0.85\textwidth}
+}
+\caption{{\bf Linear fractional baryon content of NIHAO
+simulations as a function of halo mass color coded by
+number of dark matter particles per halo.}}
+\label{fig:budget_res}
+\end{figure*}
+
+%% FIGURE 2
+\begin{figure*}
+\centerline{
   \psfig{figure=m500c_frac.eps,width=0.85\textwidth}
 }
 \caption{Comparison between baryon (upper panels) and stellar
@@ -497,6 +508,17 @@ preventing it from collapsing into the low mass haloes. The
   and thus are independent of the large scatter in the 
   {\bf stellar mass}.
 
+Fig.~\ref{fig:budget_res} shows the budget fraction of cold, 
+cool and warm-hot gas fraction. Since one can imagine that 
+with increased resolution, higher densities can be achieved in the
+CGM, potential leading to more cooling and larger
+cold/cool gas fraction, all the points are color coded by 
+the total number of dark matter particles within the haloes.
+In the plot, the number of dark matter
+partilce per halo spans 2 magnitudes and has no correlation 
+with cold and cool gas fraction.
+Therefore, the baryonic fractions predicted by NIHAO simulations
+are convergent.
 
 %% FIGURE 3
 \begin{figure*}
@@ -551,8 +573,8 @@ sub-grid models, the baryon fractions (for haloes in the mass range
 $10^{10}\lta M_{200} \lta 10^{12}\Msun$) appear insensitive to the
 details of the simulation code. In particular all three codes predict a
 greater fraction of missing baryons in lower mass haloes. This
-suggests that the potential well of the halo regulates the baryon
-fraction more than the strength of the feedback.  
+suggests that the potential well of the halo {\bf correlates the baryon
+fraction more closely} than the strength of the feedback.  
 
 
 \subsection{Mass budget of the corona}
@@ -567,9 +589,9 @@ unity, each line is colour coded by the virial mass.
 All simulations share a common attribute.  The cold gas (T$<10^4$K)
 is mostly located  near the center  ($R<0.2R_{200}$)
 where most stars in galaxies form.  In contrast, the cool ($10^4$K$<$T$<10^5$K)
-and  warm-hot ($10^5$K$<$T$<10^7$K) gas are
+and  warm-hot ($10^5$K$<$T$<5\times10^6$K) gas are
 located at large distances with roughly constant fractions up to 2
-times $R_{200}$.  The hot gas (T$>10^7$K) is a minority component
+times $R_{200}$.  The hot gas (T$>5\times10^6$K) is a minority component
 for all galaxies in the NIHAO sample, with the maximum hot gas
 fraction at any radius being  less than 5\%.
 
@@ -750,15 +772,22 @@ redshift \citep{Peeples14, Tumlinson11, Tumlinson13, Werk12, Werk13,
   Werk14}.  For the CGM of low-redshift $\sim L^*$ galaxies
 ($\Mstar\sim 10^{10.5}\Msun$), \citet{Tumlinson13} and
 \citet{Peeples14} constrain the mass of  the warm-hot CGM ($T \sim
-10^{5-7}$K), \citet{Werk14} provides a strict lower limit to the mass
+10^{5-6.7}$K), \citet{Werk14} provides a strict lower limit to the mass
 of cool material ($T \sim 10^{4-5}$K) in the CGM of these galaxies.
 In a study using X-rays, \citet{Anderson13} place a constraints on the
-mass of  hot gas ($T > 10^7$K) residing in the extended hot halos.
+mass of  hot gas ($T > 5\times10^6$K) residing in the extended hot halos.
 These observational constraints are shown in Fig.~\ref{fig:comparison}
 with the same colour scheme as in Fig.11 of \citet{Werk14}.  The
 stellar mass fractions are based on halo abundance matching as
 described in \citet{Kravtsov14}, while the cold disk gas mass comes
 from \citet{Dutton11}.
+{\bf In addition, since \citet{Crain10} and \citet{Voort13} show that 
+soft X-ray emission traces gas with temperatures a few times the 
+virial temperature (T$_{\rm vir} = 10^6$ K for M$_{200} \sim 
+10^{12} \Msun$), we also estimate the hot gas fraction with lower
+boundaries ($3\times 10^6$ K and $10^6$ K) between the hot gas and 
+warm-hot gas, the fractions can increase to 0.00511 ($3\times 10^6$K) 
+and 0.04168 ($10^6$ K).}
 {\bf The mean value of missing fraction is the residual fraction
 of the sum of mean values of all components fractions in unity
 and the lower and upper limits are calculated in the same manner
@@ -783,8 +812,8 @@ deviation of the mass fraction of stars and different components of
 gas in our most massive galaxies ($3.49 \times 10^{11} \Msun$ $<$
 M$_{200}$ $<$  $3.53 \times 10^{12} \Msun$).  The gas is assigned to a
 range of temperature bins:  cold gas (T $< 10^4$ K), cool gas ($10^4$
-K $<$ T $< 10^5$ K),  warm gas ($10^5$ K $<$ T $< 10^7$ K) and hot gas
-(T $> 10^7$ K).  The observations and the simulations match well in
+K $<$ T $< 10^5$ K),  warm gas ($10^5$ K $<$ T $<5\times 10^6$ K) and hot gas
+(T $>5\times 10^6$ K).  The observations and the simulations match well in
 every phase except the cool CGM gas, where the observations from
 \citet{Werk14} find $3\times$ the mass that NIHAO simulations predict.
 
@@ -872,7 +901,7 @@ follows:
   dominates the baryonic mass outside the virial radius, {\bf as well
   as outside the 20\% $\Rvir$}, at low masses
   ($M_{200}\lta 3\times 10^{11} \Msun$) while the warm-hot gas ($10^5
-  < T < 10^7$K) dominates at high masses ($M_{200}\gta 3\times 10^{11}
+  < T <5\times 10^6$K) dominates at high masses ($M_{200}\gta 3\times 10^{11}
   \Msun$) (Figs.~\ref{fig:corona} \& \ref{fig:inout}). 
 
 \item For the highest mass haloes in our study $\sim 10^{12}\Msun$ our
@@ -897,8 +926,8 @@ follows:
   \caption{The baryonic budget parameters for NIHAO galaxies
     in different halo  mass bins. We refer to gas in the temperature range  T
   $<$ $10^4$ K as cold; $10^4$ K $\leqslant$ T $<$ $10^5$ K as cool;
-  $10^5$ K $\leqslant$ T $<$ $10^7$ K as warm;  and T $\geqslant$
-  $10^7$ K as hot.}
+  $10^5$ K $\leqslant$ T $<$ $5\times10^6$ K as warm;  and T $\geqslant$
+  $5\times10^6$ K as hot.}
 \begin{center}
 \begin{tabular}{ccccc}
 \hline
@@ -1183,6 +1212,9 @@ Thom, C., Tumlinson, J., Werk, J.~K.\ 2012, \apjl, 758, L41
 
 % Properties of gas in and around galaxy haloes
 \bibitem[van de Voort \& Schaye (2012)]{Voort12} van de Voort, F., Schaye, J.\ 2012, \mnras, 423, 2991
+
+% Soft X-ray and ultraviolet metal-line emission from the gas around galaxies
+\bibitem[van de Voort \& Schaye (2013)]{Voort13} van de Voort, F., Schaye, J.\ 2013, \mnras, 430, 2688
 
 %The impact of stellar feedback on hot gas in galaxy haloes:
 %the Sunyaev-Zeldovich effect and soft X-ray emission 
